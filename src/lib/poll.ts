@@ -15,7 +15,7 @@ export async function getPollResults(questionKey: string): Promise<PollResult[]>
   // recuento agregado sin exponer filas individuales de voto.
   const { data, error } = await supabase.rpc('get_pepa_web_poll_results', { p_question_key: questionKey })
   if (error) throw error
-  return data.map((r) => ({ optionKey: r.option_key, votes: Number(r.votes) }))
+  return (data as { option_key: string; votes: number }[]).map((r) => ({ optionKey: r.option_key, votes: Number(r.votes) }))
 }
 
 // El propio dispositivo recuerda si ya votó esta pregunta, para no
