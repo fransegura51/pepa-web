@@ -527,16 +527,16 @@ button {
 /* La vida con Paco */
 .paco-grid {
   display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
 }
 
 .paco-card {
   position: relative;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   overflow: hidden;
   background: var(--marino);
-  aspect-ratio: 9 / 12;
+  aspect-ratio: 16 / 9;
   box-shadow: var(--shadow-softer);
 }
 
@@ -554,7 +554,7 @@ button {
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 2.2rem;
+  font-size: 1.3rem;
 }
 
 .paco-card-caption {
@@ -562,11 +562,12 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 14px;
+  padding: 8px 10px;
   background: linear-gradient(0deg, rgba(15, 31, 61, 0.85), transparent);
   color: #fff;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.78rem;
+  line-height: 1.2;
 }
 
 .empty-state {
