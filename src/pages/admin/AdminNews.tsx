@@ -25,6 +25,7 @@ export function AdminNews() {
     setForm(EMPTY_FORM)
     setEditingId(null)
     setParams({ nuevo: '1' })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   function startEdit(n: NewsRow) {
@@ -36,6 +37,9 @@ export function AdminNews() {
       publishedAt: n.publishedAt ?? '',
     })
     setEditingId(n.id)
+    // El formulario está arriba del todo — sin esto, editar un
+    // elemento más abajo en la lista parece no hacer nada (bug real).
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   function cancelForm() {

@@ -32,6 +32,7 @@ export function AdminVideos() {
     setForm(EMPTY_FORM)
     setEditingId(null)
     setParams({ nuevo: '1' })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   function startEdit(v: PacoVideoRow) {
@@ -44,6 +45,10 @@ export function AdminVideos() {
       featured: v.featured,
     })
     setEditingId(v.id)
+    // El formulario aparece arriba del todo — si se edita un elemento
+    // más abajo en una lista larga, sin esto parece que "no pasa nada"
+    // porque el formulario se abre fuera de la pantalla (bug real).
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   function cancelForm() {

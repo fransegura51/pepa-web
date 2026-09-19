@@ -36,6 +36,7 @@ export function AdminPromotions() {
     setForm(EMPTY_FORM)
     setEditingId(null)
     setParams({ nuevo: '1' })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   function startEdit(p: PromotionRow) {
@@ -49,6 +50,9 @@ export function AdminPromotions() {
       endsAt: toLocalInput(p.endsAt),
     })
     setEditingId(p.id)
+    // El formulario está arriba del todo — sin esto, editar un
+    // elemento más abajo en la lista parece no hacer nada (bug real).
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   function cancelForm() {
