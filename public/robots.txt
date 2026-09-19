@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fransegura51.github.io/pepa-web/sitemap.xml

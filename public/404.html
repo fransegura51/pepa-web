@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>PEPA Family App</title>
+    <!--
+      GitHub Pages no tiene fallback de SPA: cualquier ruta que no sea la
+      raíz da 404 real porque no existe ese archivo. Truco estándar
+      (spa-github-pages), igual que en family-app/public/404.html: este
+      404.html codifica la ruta en la query string y redirige a
+      index.html, que la descodifica antes de que React Router la lea.
+
+      pathSegmentsToKeep = 1 porque hoy se sirve bajo /pepa-web/. Cuando
+      haya dominio propio y el sitio pase a servirse en la raíz, cambiar
+      esto a 0 (y `base: '/'` en vite.config.ts).
+    -->
+    <script type="text/javascript">
+      var pathSegmentsToKeep = 1
+      var l = window.location
+      l.replace(
+        l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          l.pathname
+            .split('/')
+            .slice(0, 1 + pathSegmentsToKeep)
+            .join('/') +
+          '/?/' +
+          l.pathname
+            .slice(1)
+            .split('/')
+            .slice(pathSegmentsToKeep)
+            .join('/')
+            .replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash,
+      )
+    </script>
+  </head>
+  <body></body>
+</html>

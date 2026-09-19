@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#12A594" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <title>PEPA Family App — organiza tu casa sin caos</title>
+    <meta
+      name="description"
+      content="PEPA es la asistente de tu familia: calendario, compras, economía, cocina, eventos y documentos, todo en una sola app. Pruébala gratis."
+    />
+    <link rel="canonical" href="https://fransegura51.github.io/pepa-web/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PEPA Family App" />
+    <meta property="og:title" content="PEPA Family App — organiza tu casa sin caos" />
+    <meta
+      property="og:description"
+      content="Calendario, compras, economía, cocina, eventos y documentos: todo en una sola app familiar."
+    />
+    <meta property="og:url" content="https://fransegura51.github.io/pepa-web/" />
+    <!-- TODO: imagen OG 1200x630 dedicada — de momento el icono, para no
+         enlazar un archivo que no existe. -->
+    <meta property="og:image" content="https://fransegura51.github.io/pepa-web/apple-touch-icon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PEPA Family App — organiza tu casa sin caos" />
+    <meta
+      name="twitter:description"
+      content="Calendario, compras, economía, cocina, eventos y documentos: todo en una sola app familiar."
+    />
+    <meta name="twitter:image" content="https://fransegura51.github.io/pepa-web/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Contraparte del 404.html — ver ese archivo para el porqué. -->
+    <script type="text/javascript">
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash)
+        }
+      })(window.location)
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

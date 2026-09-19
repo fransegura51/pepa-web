@@ -1,0 +1,190 @@
+import { useDocumentMeta } from '@/hooks/useDocumentMeta'
+
+// Mismo texto, palabra por palabra, que family-app/public/privacidad.html
+// (la única política de privacidad real de PEPA, ya conocida por Google
+// y Enable Banking) — no se redacta legal nuevo para esta web, como pide
+// la Skill.
+export function Privacidad() {
+  useDocumentMeta('Política de privacidad — PEPA Family App', 'Qué datos trata PEPA Family App, para qué, y qué derechos tienes.')
+
+  return (
+    <div className="simple-page">
+      <div className="container">
+        <div className="dev-note">
+          Esta es la misma política de privacidad que usa la app. También puedes verla en{' '}
+          <a href="https://fransegura51.github.io/family-app/privacidad.html" target="_blank" rel="noreferrer">
+            fransegura51.github.io/family-app/privacidad.html
+          </a>
+          .
+        </div>
+
+        <h1>Política de privacidad de PEPA Family App</h1>
+        <p style={{ color: 'var(--texto-suave)', fontSize: 13 }}>Versión: 11 de septiembre de 2026</p>
+        <p>
+          PEPA Family App es una aplicación para organizar una familia (calendario, lista de la compra, tareas,
+          alimentación, economía, documentos y fotos). Esta página explica qué datos trata, para qué, y qué derechos
+          tienes.
+        </p>
+
+        <h2>1. Quién es el responsable</h2>
+        <p>
+          <span style={{ background: '#fff3cd', padding: '0 4px' }}>[Nombre o razón social del responsable]</span>, con
+          NIF <span style={{ background: '#fff3cd', padding: '0 4px' }}>[NIF/CIF]</span> y domicilio en{' '}
+          <span style={{ background: '#fff3cd', padding: '0 4px' }}>[Dirección postal completa]</span>. Para cualquier
+          cuestión sobre tus datos, usa el formulario de{' '}
+          <a href="/contacto">contacto</a>.
+        </p>
+
+        <h2>2. Qué datos se guardan</h2>
+        <ul>
+          <li>
+            <strong>Cuenta:</strong> email y contraseña (cifrada), el nombre que eliges mostrar, y las cuentas de tu
+            familia que tú invites.
+          </li>
+          <li>
+            <strong>Lo que tu familia apunta en la app:</strong> eventos y tareas del calendario, listas y tickets de
+            la compra (foto y líneas), productos y precios, recetas y menús, contactos, documentos, fotos, puntos y
+            recompensas de los niños, notas.
+          </li>
+          <li>
+            <strong>Economía:</strong> los gastos e ingresos que apuntas a mano o desde tickets y, solo si tú lo
+            activas, los movimientos y saldos de las cuentas bancarias que enlaces (ver punto 6).
+          </li>
+          <li>
+            <strong>Ubicación (opcional):</strong> solo de los miembros que la activen expresamente; el rastro
+            detallado se borra automáticamente a las 24 horas, y las visitas a lugares a los 90 días.
+          </li>
+          <li>
+            <strong>Voz:</strong> lo que le dictas a Pepa se convierte en texto en tu propio dispositivo
+            (reconocimiento de voz del navegador o del sistema); se guarda solo el resultado (la cita, la lista…),
+            nunca el audio.
+          </li>
+          <li>
+            <strong>Datos técnicos:</strong> si la app falla, registramos el error, la pantalla en la que estabas y el
+            tipo de navegador, para arreglarlo. Nunca el contenido de lo que estabas escribiendo.
+          </li>
+        </ul>
+
+        <h2>3. Datos de menores</h2>
+        <p>
+          Los datos de niños y niñas (nombre, cumpleaños, tareas, puntos, hucha, medidas si las apuntáis) los
+          introducen y controlan sus padres, madres o tutores legales desde su propia cuenta. Un menor solo puede
+          tener cuenta propia si la crea o autoriza su padre, madre o tutor mediante el código de invitación de la
+          familia, y puede limitarse a qué secciones accede. Puedes borrar en cualquier momento los datos de un menor
+          desde Familia.
+        </p>
+
+        <h2>4. Para qué y con qué base legal</h2>
+        <ul>
+          <li>
+            <strong>Prestar el servicio</strong> que has aceptado (organizar tu familia): ejecución del contrato (art.
+            6.1.b RGPD).
+          </li>
+          <li>
+            <strong>Conexión bancaria, Google Calendar, ubicación y notificaciones:</strong> solo con tu
+            consentimiento expreso, que puedes retirar cuando quieras desde la propia app (art. 6.1.a RGPD).
+          </li>
+          <li>
+            <strong>Seguridad y arreglo de fallos:</strong> interés legítimo en que la app funcione y sea segura (art.
+            6.1.f RGPD).
+          </li>
+        </ul>
+        <p>
+          Estos datos solo se usan para el funcionamiento de la app, dentro de la propia familia que la usa. No se
+          venden, ni se ceden, ni se comparten con terceros, ni se usan con fines publicitarios.
+        </p>
+
+        <h2>5. Google Calendar</h2>
+        <p>
+          Si un miembro de la familia decide conectar su cuenta de Google desde la app, PEPA Family App accede a los
+          eventos de su calendario de Google (título, fecha, hora, descripción y repeticiones) únicamente para:
+        </p>
+        <ul>
+          <li>
+            Copiar en Google Calendar los eventos que se apunten dentro de la app, en un calendario secundario llamado
+            "Family App" creado para ese fin.
+          </li>
+          <li>Traer a la app los eventos del calendario principal de Google de esa persona, para verlos junto al resto del calendario familiar.</li>
+        </ul>
+        <p>
+          Se puede desconectar en cualquier momento desde la app (Calendario → Externos → Desconectar), o revocando el
+          acceso directamente desde{' '}
+          <a href="https://myaccount.google.com/permissions" target="_blank" rel="noreferrer">
+            myaccount.google.com/permissions
+          </a>
+          . El uso de la información recibida de las API de Google se ajusta a la{' '}
+          <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noreferrer">
+            Política de datos de usuario de los servicios API de Google
+          </a>
+          , incluidos los requisitos de uso limitado.
+        </p>
+
+        <h2>6. Cuentas bancarias (Enable Banking)</h2>
+        <p>
+          Si un miembro de la familia decide enlazar una cuenta bancaria, PEPA Family App recibe de Enable Banking —
+          proveedor regulado de servicios de información de cuentas, bajo la normativa PSD2 de banca abierta europea —
+          la lista de cuentas, saldos y movimientos de esa cuenta, en modo solo lectura y solo durante el plazo de
+          consentimiento que se acepte en cada momento (normalmente 90 o 180 días, según el banco). Es Enable Banking
+          quien se identifica ante tu banco con tu consentimiento explícito: PEPA Family App nunca ve ni guarda tus
+          claves del banco. Se usa únicamente para mostrar y categorizar esos movimientos junto al resto de la
+          economía familiar. Se puede desconectar en cualquier momento desde Economía → Banco, o directamente desde el
+          propio banco.
+        </p>
+
+        <h2>7. Otros servicios externos (encargados de tratamiento)</h2>
+        <ul>
+          <li>
+            <strong>Supabase</strong>: base de datos, autenticación y almacenamiento de archivos, en servidores de la
+            Unión Europea.
+          </li>
+          <li>
+            <strong>Google Gemini</strong>: analiza fotos de tickets y correos reenviados para extraer productos,
+            precios o eventos, solo cuando la familia sube esas fotos o reenvía esos correos.
+          </li>
+          <li>
+            <strong>OpenStreetMap / Nominatim</strong>: búsqueda de direcciones al añadir una ubicación a un evento.
+          </li>
+          <li>
+            <strong>Servicios de notificaciones push</strong> del navegador o del sistema, solo si las activas.
+          </li>
+        </ul>
+        <p>Todos actúan siguiendo nuestras instrucciones y bajo contrato de encargado de tratamiento.</p>
+
+        <h2>8. Dónde se guardan y cómo se protegen</h2>
+        <p>
+          Todo se guarda en la base de datos privada de la familia (Supabase), protegida para que solo los miembros
+          de esa familia puedan verla (aislamiento en la propia base de datos). Toda la comunicación va cifrada. Los
+          permisos de conexión (Google, banco…) se guardan cifrados y no son accesibles desde la propia aplicación
+          web. Puedes proteger además la app con un PIN o huella/cara desde Configuración.
+        </p>
+
+        <h2>9. Cuánto tiempo se guardan</h2>
+        <p>
+          Mientras tengas cuenta. Si la borras, eliminamos tus datos y los de tu familia en un plazo máximo de 30
+          días, salvo lo que debamos conservar por obligación legal (por ejemplo, facturas). La ubicación detallada
+          se borra a las 24 horas y las visitas a lugares a los 90 días de forma automática.
+        </p>
+
+        <h2>10. Tus derechos</h2>
+        <p>
+          Puedes acceder, rectificar, borrar, limitar u oponerte al tratamiento y pedir la portabilidad de tus datos
+          escribiéndonos por el formulario de <a href="/contacto">contacto</a>. Casi todo puedes hacerlo tú mismo/a
+          desde la app: cualquier miembro puede borrar sus propios datos, desenlazar una cuenta bancaria o un
+          calendario externo, y desactivar el compartir ubicación en cualquier momento. Si crees que no te hemos
+          atendido bien, puedes reclamar ante la Agencia Española de Protección de Datos (
+          <a href="https://www.aepd.es" target="_blank" rel="noreferrer">
+            www.aepd.es
+          </a>
+          ).
+        </p>
+
+        <h2>11. Cambios</h2>
+        <p>Si cambiamos esta política te lo diremos dentro de la app antes de que entre en vigor.</p>
+
+        <p style={{ color: 'var(--texto-suave)', fontSize: 13 }}>
+          <a href="/condiciones">Ver los términos de uso →</a>
+        </p>
+      </div>
+    </div>
+  )
+}
