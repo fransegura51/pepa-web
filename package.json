@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "postbuild": "node scripts/generate-static-routes.mjs",
+    "postbuild": "node scripts/generate-static-routes.mjs && node scripts/guias/build.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "guias:borradores": "node scripts/guias/build.mjs --borradores",
+    "guias:comprobar": "node scripts/guias/check.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",
@@ -19,6 +21,7 @@
     "react-router-dom": "^6.26.0"
   },
   "devDependencies": {
+    "@types/node": "^26.6.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
@@ -26,6 +29,7 @@
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^7.1.1",
+    "marked": "^18.0.13",
     "typescript": "^5.5.4",
     "vite": "^5.4.0",
     "vitest": "^2.1.9"

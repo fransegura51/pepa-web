@@ -61,10 +61,12 @@ export function dayDate(today: Date, day: number): Date {
   return new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + day)
 }
 
-export function initialState(today: Date): DemoState {
+// Con una zona (entrada desde una guía) se abre directamente en esa
+// pestaña y no se ofrece el recorrido guiado.
+export function initialState(today: Date, tab: DemoTab | null = null): DemoState {
   const f = cloneFixtures()
   return {
-    tab: 'inicio',
+    tab: tab ?? 'inicio',
     selectedDay: weekdayIndex(today),
     events: f.events,
     shopping: f.shopping,
@@ -72,7 +74,7 @@ export function initialState(today: Date): DemoState {
     birthdayTasks: f.birthdayTasks,
     birthdayGuests: f.birthdayGuests,
     birthdayBudget: f.birthdayBudget,
-    tourStatus: 'ask',
+    tourStatus: tab ? 'done' : 'ask',
     tourStep: 0,
     notice: null,
     nextId: 1,

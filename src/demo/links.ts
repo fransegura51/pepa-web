@@ -6,9 +6,12 @@ import { APP_URL } from '@/config/site'
 // desde aquí.
 export const DEMO_ORIGIN = 'demo'
 
-export function buildSignupUrl(): string {
+// guide: slug de la guía desde la que se llegó a la demo (ya validado por
+// parseDemoEntry); permite medir qué guía trae registros.
+export function buildSignupUrl(guide: string | null = null): string {
   const url = new URL(APP_URL)
   url.searchParams.set('origen', DEMO_ORIGIN)
+  if (guide) url.searchParams.set('guia', guide)
   return url.toString()
 }
 

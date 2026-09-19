@@ -47,6 +47,12 @@
   color: var(--texto);
 }
 
+/* Contraste accesible (4,5:1): turquesa oscuro de la marca con texto blanco. */
+.dm-shell .btn-primary {
+  background: var(--turquesa-dark);
+  color: #fff;
+}
+
 /* ---- Aviso fijo de demostración ---- */
 
 .dm-banner {
@@ -305,8 +311,8 @@ button.dm-card--link:hover {
 }
 
 .dm-day.is-selected {
-  background: var(--turquesa);
-  border-color: var(--turquesa);
+  background: var(--turquesa-dark);
+  border-color: var(--turquesa-dark);
   color: #fff;
 }
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { SOCIAL_LINKS } from '@/config/site'
+import { SHOW_GUIDES_LINK, SOCIAL_LINKS } from '@/config/site'
 import pepaLogoMaster from '@/assets/brand/pepa-family-app-logo-master.png'
 
 const SOCIAL_ICON: Record<string, string> = {
@@ -32,6 +32,7 @@ export function Footer() {
             <h4>PEPA</h4>
             <Link to="/funciones">Funciones</Link>
             <Link to="/paco">La vida con Paco</Link>
+            {SHOW_GUIDES_LINK && <a href="/guias/">Guías</a>}
             <Link to="/precios">Precios</Link>
             <Link to="/preguntas">Preguntas</Link>
             <Link to="/novedades">Novedades</Link>

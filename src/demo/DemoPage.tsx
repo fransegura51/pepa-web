@@ -1,4 +1,5 @@
 import { useReducer, useState } from 'react'
+import { parseDemoEntry } from '@/demo/entry'
 import { SITE_HOME, buildSignupUrl } from '@/demo/links'
 import { CalendarioScreen, CocinaScreen, ComprasScreen, CumpleanosScreen, EconomiaScreen, InicioScreen, type ScreenProps } from '@/demo/screens'
 import { DEMO_TABS, TOUR_STEPS, demoReducer, initialState, weekdayIndex, type DemoTab } from '@/demo/state'
@@ -15,10 +16,12 @@ const SCREENS: Record<DemoTab, (props: ScreenProps) => JSX.Element> = {
 
 export function DemoPage() {
   const [today] = useState(() => new Date())
-  const [state, dispatch] = useReducer(demoReducer, today, initialState)
+  // Entrada desde una guía (?zona=…&desde=…): ver src/demo/entry.ts.
+  const [entry] = useState(() => parseDemoEntry(typeof window === 'undefined' ? '' : window.location.search))
+  const [state, dispatch] = useReducer(demoReducer, entry.tab, (tab) => initialState(today, tab))
   const Screen = SCREENS[state.tab]
   const todayIndex = weekdayIndex(today)
-  const signupUrl = buildSignupUrl()
+  const signupUrl = buildSignupUrl(entry.guide)
   const step = TOUR_STEPS[state.tourStep]
 
   return (

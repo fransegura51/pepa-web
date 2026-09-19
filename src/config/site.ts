@@ -12,6 +12,12 @@ export const APP_URL = 'https://fransegura51.github.io/family-app/'
 // por eso los botones son enlaces normales (carga completa), no <Link>.
 export const DEMO_URL = '/demo/'
 
+// Enlace "Guías" en la cabecera y el pie. Se activa (true) al publicar la
+// PRIMERA guía: mientras todas sean borradores, /guias/ no existe y el
+// enlace daría un 404. Hay una prueba (tests/guias) que falla si esto no
+// coincide con las guías publicadas. Ver docs/GUIAS.md.
+export const SHOW_GUIDES_LINK = false
+
 export const SOCIAL_LINKS = [
   { label: 'TikTok', href: 'https://vm.tiktok.com/ZN9SCoTPw5T4b-Psl03/' },
   { label: 'Facebook', href: 'https://www.facebook.com/share/1V4aXKnrKj/' },

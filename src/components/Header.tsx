@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { DEMO_URL } from '@/config/site'
+import { DEMO_URL, SHOW_GUIDES_LINK } from '@/config/site'
 
 const NAV_LINKS = [
   { to: '/', label: 'Inicio' },
@@ -29,6 +29,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          {SHOW_GUIDES_LINK && <a href="/guias/">Guías</a>}
         </nav>
 
         <div className="header-actions">
@@ -54,6 +55,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          {SHOW_GUIDES_LINK && <a href="/guias/">Guías</a>}
         </nav>
       )}
     </header>
