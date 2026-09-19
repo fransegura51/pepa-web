@@ -1,14 +1,15 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// GitHub Pages sirve el repo bajo /pepa-web/ hasta que haya dominio propio
-// (entonces esto pasa a '/' y se añade un CNAME — ver public/404.html).
-export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/pepa-web/' : '/',
+// Dominio propio ya comprado (pepafamilyapp.es) — se sirve desde la
+// raíz, con public/CNAME. Antes de esto vivía en /pepa-web/ (ver
+// git log de vite.config.ts si hiciera falta volver atrás).
+export default defineConfig({
+  base: '/',
   plugins: [react()],
   resolve: {
     alias: {
       '@': '/src',
     },
   },
-}))
+})

@@ -10,12 +10,11 @@
       404.html codifica la ruta en la query string y redirige a
       index.html, que la descodifica antes de que React Router la lea.
 
-      pathSegmentsToKeep = 1 porque hoy se sirve bajo /pepa-web/. Cuando
-      haya dominio propio y el sitio pase a servirse en la raíz, cambiar
-      esto a 0 (y `base: '/'` en vite.config.ts).
+      pathSegmentsToKeep = 0 porque ya se sirve en la raíz de
+      pepafamilyapp.es (antes era 1, bajo /pepa-web/).
     -->
     <script type="text/javascript">
-      var pathSegmentsToKeep = 1
+      var pathSegmentsToKeep = 0
       var l = window.location
       l.replace(
         l.protocol +

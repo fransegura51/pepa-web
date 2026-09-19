@@ -1,9 +1,11 @@
-// Centralizado a propósito (Skill sección 9): el dominio todavía se
-// compra aparte. Cuando llegue, cambiar SITE_URL aquí, `base` en
-// vite.config.ts a '/', añadir public/CNAME y pathSegmentsToKeep a 0
-// en public/404.html — nada más debería tocarse.
-export const SITE_URL = 'https://fransegura51.github.io/pepa-web'
+// Dominio propio ya comprado y configurado (pepafamilyapp.es).
+export const SITE_URL = 'https://pepafamilyapp.es'
 
+// La app en sí sigue en GitHub Pages por ahora — app.pepafamilyapp.es
+// queda reservado (ver DNS pendiente) pero no está activo todavía:
+// moverla de dominio de verdad afecta a la app real en producción
+// (redirect de OAuth de Google Calendar, dominio dado de alta en
+// Enable Banking...), así que es un paso aparte, no automático.
 export const APP_URL = 'https://fransegura51.github.io/family-app/'
 
 export const SOCIAL_LINKS = [
