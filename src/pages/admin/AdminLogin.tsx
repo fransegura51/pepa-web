@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { signIn } from '@/lib/admin/auth'
+import { authErrorMessage } from '@/lib/errorMessage'
 
 export function AdminLogin({ onSignedIn }: { onSignedIn: () => void }) {
   const [email, setEmail] = useState('')
@@ -12,10 +13,10 @@ export function AdminLogin({ onSignedIn }: { onSignedIn: () => void }) {
     setLoading(true)
     setError('')
     try {
-      await signIn(email, password)
+      await signIn(email.trim(), password)
       onSignedIn()
-    } catch {
-      setError('Email o contraseña incorrectos.')
+    } catch (err) {
+      setError(authErrorMessage(err))
     } finally {
       setLoading(false)
     }
