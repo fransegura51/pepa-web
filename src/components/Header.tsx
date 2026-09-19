@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { DEMO_URL } from '@/config/site'
 
 const NAV_LINKS = [
   { to: '/', label: 'Inicio' },
@@ -31,9 +32,9 @@ export function Header() {
         </nav>
 
         <div className="header-actions">
-          <Link to="/precios" className="btn btn-primary">
-            Probar PEPA gratis
-          </Link>
+          <a href={DEMO_URL} className="btn btn-primary">
+            Probar PEPA ahora
+          </a>
           <button
             type="button"
             className="menu-toggle"

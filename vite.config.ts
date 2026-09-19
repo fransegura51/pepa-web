@@ -12,4 +12,14 @@ export default defineConfig({
       '@': '/src',
     },
   },
+  build: {
+    rollupOptions: {
+      // Dos páginas de entrada: la web y la demo pública (/demo/), esta
+      // última con su propio paquete y sin Supabase.
+      input: {
+        main: 'index.html',
+        demo: 'demo/index.html',
+      },
+    },
+  },
 })

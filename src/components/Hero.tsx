@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { DEMO_URL } from '@/config/site'
 import { MODULES } from '@/config/content'
 import { EDITABLE_TEXTS } from '@/lib/admin/texts'
 import { useText } from '@/context/EditableTextsContext'
@@ -37,7 +38,10 @@ export function Hero() {
           <p>{subtitle}</p>
 
           <div className="hero-cta-row">
-            <a href="#lista-de-espera" className="btn btn-primary">
+            <a href={DEMO_URL} className="btn btn-primary">
+              Probar PEPA ahora
+            </a>
+            <a href="#lista-de-espera" className="btn btn-ghost">
               {cta}
             </a>
             <Link to="/funciones" className="btn btn-ghost">
