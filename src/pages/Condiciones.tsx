@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useDocumentMeta } from '@/hooks/useDocumentMeta'
 
 // Mismo texto que family-app/public/terminos.html — no se redacta legal
@@ -25,7 +26,7 @@ export function Condiciones() {
           ofrecida por <span style={{ background: '#fff3cd', padding: '0 4px' }}>[Nombre o razón social]</span> (
           <span style={{ background: '#fff3cd', padding: '0 4px' }}>[NIF/CIF]</span>,{' '}
           <span style={{ background: '#fff3cd', padding: '0 4px' }}>[Dirección]</span>). Al crear una cuenta aceptas
-          estos términos y la <a href="/privacidad">política de privacidad</a>.
+          estos términos y la <Link to="/privacidad">política de privacidad</Link>.
         </p>
 
         <h2>2. Cuenta y acceso</h2>
@@ -86,7 +87,7 @@ export function Condiciones() {
         <h2>9. Baja</h2>
         <p>
           Puedes dejar de usar la app y pedir el borrado de tu cuenta y la de tu familia cuando quieras escribiéndonos
-          por el formulario de <a href="/contacto">contacto</a>. Podemos suspender cuentas que incumplan estos
+          por el formulario de <Link to="/contacto">contacto</Link>. Podemos suspender cuentas que incumplan estos
           términos.
         </p>
 
@@ -94,7 +95,7 @@ export function Condiciones() {
         <p>Estos términos se rigen por la legislación española. Para cualquier conflicto, los juzgados del domicilio del usuario.</p>
 
         <p style={{ color: 'var(--texto-suave)', fontSize: 13 }}>
-          <a href="/privacidad">Ver la política de privacidad →</a>
+          <Link to="/privacidad">Ver la política de privacidad →</Link>
         </p>
       </div>
     </div>

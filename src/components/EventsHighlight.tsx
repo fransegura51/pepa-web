@@ -1,3 +1,5 @@
+import { asset } from '@/lib/assetUrl'
+
 export function EventsHighlight() {
   return (
     <div className="events-highlight">
@@ -16,7 +18,7 @@ export function EventsHighlight() {
         </div>
       </div>
       <div className="phone-mockup" style={{ margin: 0 }}>
-        <img src="/screenshots/eventos.svg" alt="Panel de un evento organizado con PEPA" loading="lazy" />
+        <img src={asset('screenshots/eventos.svg')} alt="Panel de un evento organizado con PEPA" loading="lazy" />
       </div>
     </div>
   )

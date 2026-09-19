@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useDocumentMeta } from '@/hooks/useDocumentMeta'
 
 // Mismo texto, palabra por palabra, que family-app/public/privacidad.html
@@ -32,7 +33,7 @@ export function Privacidad() {
           NIF <span style={{ background: '#fff3cd', padding: '0 4px' }}>[NIF/CIF]</span> y domicilio en{' '}
           <span style={{ background: '#fff3cd', padding: '0 4px' }}>[Dirección postal completa]</span>. Para cualquier
           cuestión sobre tus datos, usa el formulario de{' '}
-          <a href="/contacto">contacto</a>.
+          <Link to="/contacto">contacto</Link>.
         </p>
 
         <h2>2. Qué datos se guardan</h2>
@@ -168,7 +169,7 @@ export function Privacidad() {
         <h2>10. Tus derechos</h2>
         <p>
           Puedes acceder, rectificar, borrar, limitar u oponerte al tratamiento y pedir la portabilidad de tus datos
-          escribiéndonos por el formulario de <a href="/contacto">contacto</a>. Casi todo puedes hacerlo tú mismo/a
+          escribiéndonos por el formulario de <Link to="/contacto">contacto</Link>. Casi todo puedes hacerlo tú mismo/a
           desde la app: cualquier miembro puede borrar sus propios datos, desenlazar una cuenta bancaria o un
           calendario externo, y desactivar el compartir ubicación en cualquier momento. Si crees que no te hemos
           atendido bien, puedes reclamar ante la Agencia Española de Protección de Datos (
@@ -182,7 +183,7 @@ export function Privacidad() {
         <p>Si cambiamos esta política te lo diremos dentro de la app antes de que entre en vigor.</p>
 
         <p style={{ color: 'var(--texto-suave)', fontSize: 13 }}>
-          <a href="/condiciones">Ver los términos de uso →</a>
+          <Link to="/condiciones">Ver los términos de uso →</Link>
         </p>
       </div>
     </div>

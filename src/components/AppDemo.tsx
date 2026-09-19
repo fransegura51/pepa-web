@@ -1,16 +1,17 @@
 import { useState } from 'react'
+import { asset } from '@/lib/assetUrl'
 
 // TODO: sustituir por capturas reales de la app cuando haya una cuenta
 // de demostración con datos de ejemplo — no se usan capturas de familias
 // reales en una web pública. Por ahora, ilustraciones placeholder
 // (public/screenshots/*.svg) con el color/icono real de cada módulo.
 const DEMO_TABS = [
-  { key: 'calendario', label: 'Calendario', image: '/screenshots/calendario.svg' },
-  { key: 'compras', label: 'Compras', image: '/screenshots/compras.svg' },
-  { key: 'economia', label: 'Economía', image: '/screenshots/economia.svg' },
-  { key: 'cocina', label: 'Cocina', image: '/screenshots/cocina.svg' },
-  { key: 'eventos', label: 'Eventos', image: '/screenshots/eventos.svg' },
-  { key: 'documentos', label: 'Documentos', image: '/screenshots/documentos.svg' },
+  { key: 'calendario', label: 'Calendario', image: asset('screenshots/calendario.svg') },
+  { key: 'compras', label: 'Compras', image: asset('screenshots/compras.svg') },
+  { key: 'economia', label: 'Economía', image: asset('screenshots/economia.svg') },
+  { key: 'cocina', label: 'Cocina', image: asset('screenshots/cocina.svg') },
+  { key: 'eventos', label: 'Eventos', image: asset('screenshots/eventos.svg') },
+  { key: 'documentos', label: 'Documentos', image: asset('screenshots/documentos.svg') },
 ]
 
 export function AppDemo() {
@@ -34,7 +35,7 @@ export function AppDemo() {
         ))}
       </div>
       <div className="demo-frame">
-        <img src={current.image} alt={`Captura real del módulo ${current.label} de PEPA`} loading="lazy" />
+        <img src={current.image} alt={`Vista de ejemplo del módulo ${current.label} de PEPA`} loading="lazy" />
       </div>
     </div>
   )
