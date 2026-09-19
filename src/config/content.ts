@@ -1,7 +1,7 @@
-// Contenido centralizado aquí (Skill sección 12: "el propietario no
-// debería tener que editar componentes React para cambiar un vídeo o
-// una pregunta") — cambiar un vídeo, la pregunta de la semana o una
-// pregunta de la FAQ es editar este archivo, no los componentes.
+// Contenido que NO se gestiona desde /admin (módulos, test, FAQ) —
+// vídeos, promociones, novedades, la pregunta de Paco y los textos
+// editables viven en Supabase, gestionados desde el panel (Skill
+// sección 12), no aquí.
 
 export interface ModuleInfo {
   key: string
@@ -22,19 +22,6 @@ export const MODULES: ModuleInfo[] = [
   { key: 'eventos', icon: '🎉', name: 'Eventos', tagline: 'Cumpleaños, comuniones y mucho más.', color: '#EADCFF' },
   { key: 'documentos', icon: '📄', name: 'Documentos', tagline: 'Todo lo importante, siempre a mano.', color: '#DCF3FF' },
 ]
-
-export interface PacoVideo {
-  title: string
-  thumbnail: string
-  url: string
-  date: string
-  platform?: string
-}
-
-// Sin vídeos reales todavía — placeholder EXPLÍCITO (Skill: nunca
-// inventar miniaturas/contenido). En cuanto haya vídeos reales, se
-// añaden aquí y la sección deja de mostrar el estado vacío.
-export const PACO_VIDEOS: PacoVideo[] = []
 
 export interface QuizQuestion {
   question: string
@@ -111,18 +98,3 @@ export const FAQ_ITEMS: FaqItem[] = [
     answer: 'En el móvil y en el ordenador, desde el navegador — no hace falta instalar nada de una tienda de aplicaciones.',
   },
 ]
-
-export interface PacoQuestion {
-  key: string
-  question: string
-  options: { key: string; label: string }[]
-}
-
-export const PACO_QUESTION: PacoQuestion = {
-  key: 'permiso_o_amenaza_2026',
-  question: 'Cuando tu pareja dice "HAZ LO QUE QUIERAS"... ¿es permiso o es una amenaza?',
-  options: [
-    { key: 'permiso', label: 'Permiso real' },
-    { key: 'amenaza', label: 'Amenaza disfrazada' },
-  ],
-}

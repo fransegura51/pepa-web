@@ -36,6 +36,7 @@ export function Footer() {
             <Link to="/paco">La vida con Paco</Link>
             <Link to="/precios">Precios</Link>
             <Link to="/preguntas">Preguntas</Link>
+            <Link to="/novedades">Novedades</Link>
           </div>
 
           <div className="footer-col">
