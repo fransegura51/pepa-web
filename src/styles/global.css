@@ -391,7 +391,6 @@ button {
   aspect-ratio: 9 / 19.5;
   object-fit: cover;
   background: #fff;
-  opacity: 0;
   transition: opacity 0.6s ease;
 }
 
@@ -402,10 +401,6 @@ button {
 .phone-carousel img:not(:first-child) {
   position: absolute;
   inset: 0;
-}
-
-.phone-carousel img.is-active {
-  opacity: 1;
 }
 
 .phone-carousel-dots {
