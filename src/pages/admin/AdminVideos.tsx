@@ -128,7 +128,16 @@ export function AdminVideos() {
           </div>
           <label>
             Miniatura (opcional)
-            <input type="file" accept="image/*" onChange={(e) => handleThumbnail(e.target.files?.[0])} />
+          </label>
+          <label className="btn btn-ghost" style={{ margin: 0, cursor: 'pointer', width: 'fit-content' }}>
+            {uploading ? 'Subiendo…' : 'Elegir foto'}
+            <input
+              type="file"
+              accept="image/*"
+              style={{ display: 'none' }}
+              onChange={(e) => handleThumbnail(e.target.files?.[0])}
+              disabled={uploading}
+            />
           </label>
           {form.thumbnailUrl && <img src={form.thumbnailUrl} alt="" style={{ width: 100, borderRadius: 8 }} />}
           <div style={{ display: 'flex', gap: 8 }}>

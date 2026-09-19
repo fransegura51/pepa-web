@@ -12,6 +12,7 @@ export function AdminNews() {
   const [editingId, setEditingId] = useState<string | null>(null)
   const [form, setForm] = useState<NewsInput>(EMPTY_FORM)
   const [error, setError] = useState('')
+  const [uploading, setUploading] = useState(false)
 
   const showForm = editingId !== null || params.get('nuevo') === '1'
 
@@ -57,11 +58,14 @@ export function AdminNews() {
 
   async function handleImage(file: File | undefined) {
     if (!file) return
+    setUploading(true)
     try {
       const url = await uploadMedia(file)
       setForm((f) => ({ ...f, imageUrl: url }))
     } catch (err) {
       setError(err instanceof Error ? err.message : 'No se ha podido subir la imagen.')
+    } finally {
+      setUploading(false)
     }
   }
 
@@ -98,7 +102,16 @@ export function AdminNews() {
           </div>
           <label>
             Imagen/captura (opcional)
-            <input type="file" accept="image/*" onChange={(e) => handleImage(e.target.files?.[0])} />
+          </label>
+          <label className="btn btn-ghost" style={{ margin: 0, cursor: 'pointer', width: 'fit-content' }}>
+            {uploading ? 'Subiendo…' : 'Elegir foto'}
+            <input
+              type="file"
+              accept="image/*"
+              style={{ display: 'none' }}
+              onChange={(e) => handleImage(e.target.files?.[0])}
+              disabled={uploading}
+            />
           </label>
           {form.imageUrl && <img src={form.imageUrl} alt="" style={{ width: 100, borderRadius: 8 }} />}
           <div style={{ display: 'flex', gap: 8 }}>
