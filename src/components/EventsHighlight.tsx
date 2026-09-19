@@ -1,6 +1,8 @@
-import { asset } from '@/lib/assetUrl'
+import { useModuleImage } from '@/context/ImagesContext'
 
 export function EventsHighlight() {
+  const image = useModuleImage('eventos')
+
   return (
     <div className="events-highlight">
       <div>
@@ -18,7 +20,7 @@ export function EventsHighlight() {
         </div>
       </div>
       <div className="phone-mockup" style={{ margin: 0 }}>
-        <img src={asset('screenshots/eventos.svg')} alt="Panel de un evento organizado con PEPA" loading="lazy" />
+        <img src={image} alt="Panel de un evento organizado con PEPA" loading="lazy" />
       </div>
     </div>
   )

@@ -20,6 +20,7 @@ import { AdminPromotions } from '@/pages/admin/AdminPromotions'
 import { AdminNews } from '@/pages/admin/AdminNews'
 import { AdminPoll } from '@/pages/admin/AdminPoll'
 import { AdminTexts } from '@/pages/admin/AdminTexts'
+import { AdminImages } from '@/pages/admin/AdminImages'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -54,6 +55,7 @@ export function App() {
           <Route path="novedades" element={<AdminNews />} />
           <Route path="pregunta" element={<AdminPoll />} />
           <Route path="textos" element={<AdminTexts />} />
+          <Route path="imagenes" element={<AdminImages />} />
         </Route>
 
         <Route element={<PublicLayout />}>

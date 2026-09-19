@@ -1,5 +1,5 @@
 import { PhoneCarousel } from '@/components/PhoneCarousel'
-import { asset } from '@/lib/assetUrl'
+import { useModuleImages } from '@/context/ImagesContext'
 
 const BENEFITS = [
   { icon: '⏱️', label: 'Ahorra tiempo' },
@@ -8,17 +8,15 @@ const BENEFITS = [
   { icon: '⭐', label: 'Más momentos de calidad' },
 ]
 
-const IMAGES = [
-  { src: asset('screenshots/calendario.svg'), alt: 'Calendario compartido de la familia en PEPA' },
-  { src: asset('screenshots/compras.svg'), alt: 'Lista de la compra de PEPA' },
-  { src: asset('screenshots/cocina.svg'), alt: 'Menú semanal en PEPA' },
-]
+const SUBSET = ['calendario', 'compras', 'cocina']
 
 export function BenefitsDemo() {
+  const images = useModuleImages().filter((img) => SUBSET.includes(img.key))
+
   return (
     <div className="benefits-layout">
       <div className="phone-mockup" style={{ margin: 0 }}>
-        <PhoneCarousel images={IMAGES} />
+        <PhoneCarousel images={images} />
       </div>
       <div>
         <p className="eyebrow">Más organización. Más momentos juntos.</p>

@@ -11,6 +11,7 @@ const SECTIONS = [
   { to: '/admin/novedades', label: 'Novedades' },
   { to: '/admin/pregunta', label: 'La pregunta de Paco' },
   { to: '/admin/textos', label: 'Textos' },
+  { to: '/admin/imagenes', label: 'Imágenes' },
 ]
 
 export function AdminLayout() {
