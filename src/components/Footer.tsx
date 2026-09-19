@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { SOCIAL_LINKS } from '@/config/site'
+import pepaLogoMaster from '@/assets/brand/pepa-family-app-logo-master.png'
 
 const SOCIAL_ICON: Record<string, string> = {
   TikTok: '🎵',
@@ -14,11 +15,8 @@ export function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-col">
-            <Link to="/" className="brand" style={{ color: '#fff', marginBottom: 10 }}>
-              <span className="brand-mark" aria-hidden="true">
-                🏠
-              </span>
-              PEPA Family App
+            <Link to="/" className="footer-brand" style={{ marginBottom: 10 }}>
+              <img src={pepaLogoMaster} alt="PEPA Family App" className="footer-logo" width={1881} height={836} />
             </Link>
             <p style={{ color: '#c7d0e3', maxWidth: '32ch' }}>Tu familia. Tu tiempo. Tu PEPA. 💚</p>
             <div className="footer-social">
