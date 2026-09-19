@@ -6,7 +6,10 @@ descripcion: Cómo evitar regalos repetidos en cumpleaños y Navidad: una lista 
 autor: Equipo PEPA
 tema: Regalos y celebraciones
 intencion: informacional
-estado: borrador
+estado: publicado
+publicado: 2026-09-19
+revisado_por: Equipo PEPA
+revisado_fecha: 2026-09-19
 relacionadas:
   - cumpleanos-infantil-paso-a-paso
   - calendario-familiar-sin-olvidos

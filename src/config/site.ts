@@ -16,7 +16,7 @@ export const DEMO_URL = '/demo/'
 // PRIMERA guía: mientras todas sean borradores, /guias/ no existe y el
 // enlace daría un 404. Hay una prueba (tests/guias) que falla si esto no
 // coincide con las guías publicadas. Ver docs/GUIAS.md.
-export const SHOW_GUIDES_LINK = false
+export const SHOW_GUIDES_LINK = true
 
 export const SOCIAL_LINKS = [
   { label: 'TikTok', href: 'https://vm.tiktok.com/ZN9SCoTPw5T4b-Psl03/' },

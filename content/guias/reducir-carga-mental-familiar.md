@@ -6,7 +6,10 @@ descripcion: Qué es la carga mental familiar y cómo reducirla: sacarlo todo de
 autor: Equipo PEPA
 tema: Carga mental
 intencion: informacional
-estado: borrador
+estado: publicado
+publicado: 2026-09-19
+revisado_por: Equipo PEPA
+revisado_fecha: 2026-09-19
 relacionadas:
   - reparto-tareas-casa-justo
   - calendario-familiar-sin-olvidos

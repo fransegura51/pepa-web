@@ -6,7 +6,10 @@ descripcion: Criterios para comparar aplicaciones de organización familiar: fun
 autor: Equipo PEPA
 tema: Aplicaciones de organización familiar
 intencion: comparativa
-estado: borrador
+estado: publicado
+publicado: 2026-09-19
+revisado_por: Equipo PEPA
+revisado_fecha: 2026-09-19
 relacionadas:
   - reducir-carga-mental-familiar
   - calendario-familiar-sin-olvidos

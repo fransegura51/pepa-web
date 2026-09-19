@@ -6,7 +6,10 @@ descripcion: Cómo repartir las tareas de casa de forma justa en cinco pasos: li
 autor: Equipo PEPA
 tema: Tareas del hogar
 intencion: informacional
-estado: borrador
+estado: publicado
+publicado: 2026-09-19
+revisado_por: Equipo PEPA
+revisado_fecha: 2026-09-19
 relacionadas:
   - reducir-carga-mental-familiar
   - calendario-familiar-sin-olvidos

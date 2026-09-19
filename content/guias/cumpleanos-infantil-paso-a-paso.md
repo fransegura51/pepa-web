@@ -6,7 +6,10 @@ descripcion: Guía paso a paso para organizar un cumpleaños infantil: cuenta at
 autor: Equipo PEPA
 tema: Cumpleaños infantiles
 intencion: informacional
-estado: borrador
+estado: publicado
+publicado: 2026-09-19
+revisado_por: Equipo PEPA
+revisado_fecha: 2026-09-19
 relacionadas:
   - regalos-repetidos-cumpleanos-navidad
   - calendario-familiar-sin-olvidos

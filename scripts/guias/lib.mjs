@@ -210,7 +210,8 @@ export function validateGuides(guides, today) {
       }
       if (typeof g.revisado_por !== 'string' || !g.revisado_por.trim()) at('para publicar hace falta "revisado_por": una persona debe revisar la guía.')
       if (!isRealDate(g.revisado_fecha ?? '')) at('para publicar hace falta "revisado_fecha" con una fecha real (AAAA-MM-DD).')
-      if (/\b(TODO|LOREM|XXX)\b|\[\[/i.test(g.body ?? '')) at('el texto todavía contiene marcas de trabajo pendiente (TODO, XXX, [[...]]).')
+      // Sin distinguir mayúsculas se dispararía con "todo", palabra normal en español.
+      if (/\b(TODO|LOREM IPSUM|XXX)\b|\[\[/.test(g.body ?? '')) at('el texto todavía contiene marcas de trabajo pendiente (TODO, XXX, [[...]]).')
       // Una guía "relacionada" que aún es borrador no es un error: al
       // publicar, ese enlace simplemente no aparece (ver linkableRelated).
     }

@@ -6,7 +6,10 @@ descripcion: Aprende a planificar un menú semanal familiar y a convertirlo en u
 autor: Equipo PEPA
 tema: Menú semanal y compra
 intencion: informacional
-estado: borrador
+estado: publicado
+publicado: 2026-09-19
+revisado_por: Equipo PEPA
+revisado_fecha: 2026-09-19
 relacionadas:
   - presupuesto-familiar-sin-hojas-complicadas
   - calendario-familiar-sin-olvidos

@@ -6,7 +6,10 @@ descripcion: Controla el presupuesto familiar con tres números, categorías sen
 autor: Equipo PEPA
 tema: Presupuesto familiar
 intencion: informacional
-estado: borrador
+estado: publicado
+publicado: 2026-09-19
+revisado_por: Equipo PEPA
+revisado_fecha: 2026-09-19
 relacionadas:
   - menu-semanal-lista-compra
   - reducir-carga-mental-familiar

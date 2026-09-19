@@ -6,7 +6,10 @@ descripcion: Método práctico para organizar el calendario familiar: un solo si
 autor: Equipo PEPA
 tema: Calendario familiar
 intencion: informacional
-estado: borrador
+estado: publicado
+publicado: 2026-09-19
+revisado_por: Equipo PEPA
+revisado_fecha: 2026-09-19
 principal: true
 relacionadas:
   - reparto-tareas-casa-justo

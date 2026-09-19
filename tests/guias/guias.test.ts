@@ -111,6 +111,10 @@ describe('validación', () => {
     })
   }
 
+  it('la palabra española "todo" no se confunde con una marca TODO', () => {
+    expect(validateGuides([published({ body: `${BODY} Todo el equipo lo hace todo junto, y todos lo ven.` })], TODAY)).toEqual([])
+  })
+
   it('un borrador puede no tener fechas ni revisor', () => {
     expect(validateGuides([mk()], TODAY)).toEqual([])
   })
@@ -259,9 +263,15 @@ describe('primer grupo de guías (contenido real)', () => {
     expect(validateGuides(guides, TODAY)).toEqual([])
   })
 
-  it('siguen sin publicarse hasta que una persona las revise', () => {
-    // Al publicar la primera, actualiza este número (ver docs/GUIAS.md).
-    expect(guides.filter((g) => g.estado === 'publicado')).toHaveLength(0)
+  it('están publicadas, cada una con fecha real y revisión anotada', () => {
+    // Si añades o retiras guías, actualiza este número (ver docs/GUIAS.md).
+    const publicadas = guides.filter((g) => g.estado === 'publicado')
+    expect(publicadas).toHaveLength(8)
+    for (const g of publicadas) {
+      expect(g.publicado, g.slug).toBe('2026-09-19')
+      expect(g.revisado_por, g.slug).toBeTruthy()
+      expect(g.revisado_fecha, g.slug).toBe('2026-09-19')
+    }
   })
 
   it('el enlace "Guías" de la web coincide con si hay guías publicadas', () => {
