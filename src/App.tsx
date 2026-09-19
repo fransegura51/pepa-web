@@ -21,6 +21,7 @@ import { AdminNews } from '@/pages/admin/AdminNews'
 import { AdminPoll } from '@/pages/admin/AdminPoll'
 import { AdminTexts } from '@/pages/admin/AdminTexts'
 import { AdminImages } from '@/pages/admin/AdminImages'
+import { AdminResetPassword } from '@/pages/admin/AdminResetPassword'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -43,7 +44,19 @@ function PublicLayout() {
   )
 }
 
+// Enlace de "¿Olvidaste tu contraseña?" (AdminLogin) — Supabase vuelve
+// aquí con #access_token=...&type=recovery en el hash. Se reconoce
+// ANTES que las rutas normales, sin pasar por AdminLayout (que
+// intentaría redirigir a /admin ya "dentro" antes de dejar elegir la
+// contraseña nueva).
+function isPasswordRecoveryLink(): boolean {
+  return window.location.hash.includes('type=recovery')
+}
+
 export function App() {
+  if (isPasswordRecoveryLink()) {
+    return <AdminResetPassword />
+  }
   return (
     <>
       <ScrollToTop />

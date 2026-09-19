@@ -9,6 +9,26 @@ export async function signOut(): Promise<void> {
   await supabase.auth.signOut()
 }
 
+// Petición real: "se me ha borrado la cuenta de administrador no
+// tengo la contraseña para entrar" — la cuenta seguía existiendo, lo
+// que faltaba era una forma de recuperar la contraseña sin tener que
+// pedirlo a mano. redirectTo apunta a la raíz del sitio (un archivo
+// real, sin el truco de 404.html de GitHub Pages de por medio — un
+// enlace de email es justo el caso más frágil para ese doble salto);
+// AdminResetPassword reconoce el enlace de recuperación por su propio
+// hash (#type=recovery) antes de nada.
+export async function requestPasswordReset(email: string): Promise<void> {
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: window.location.origin + '/',
+  })
+  if (error) throw error
+}
+
+export async function updatePassword(newPassword: string): Promise<void> {
+  const { error } = await supabase.auth.updateUser({ password: newPassword })
+  if (error) throw error
+}
+
 export async function getSessionEmail(): Promise<string | null> {
   const { data } = await supabase.auth.getSession()
   return data.session?.user.email ?? null
