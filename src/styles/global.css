@@ -240,6 +240,18 @@ button {
   cursor: pointer;
 }
 
+/* Móvil estrecho: el botón "Probar PEPA ahora" no debe partirse en 3 líneas */
+@media (max-width: 480px) {
+  .site-header .header-actions .btn {
+    white-space: nowrap;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+  .site-header .container {
+    gap: 8px;
+  }
+}
+
 @media (min-width: 860px) {
   .main-nav {
     display: flex;
@@ -438,6 +450,11 @@ button {
 
 .hero-visual .sticky-note--corner {
   position: absolute;
+  /* Hay que anular top/right heredados de ".hero-visual .sticky-note": con
+     los cuatro lados fijados a la vez, una caja absoluta se estira hasta
+     ocupar todo el hero-visual y tapa el móvil (nota blanca gigante). */
+  top: auto;
+  right: auto;
   bottom: 10px;
   left: -14px;
 }
