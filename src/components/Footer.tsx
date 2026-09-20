@@ -20,8 +20,9 @@ export function Footer() {
             </Link>
             <p style={{ color: '#c7d0e3', maxWidth: '32ch' }}>Tu familia. Tu tiempo. Tu PEPA. 💚</p>
             <div className="footer-social">
-              {SOCIAL_LINKS.map((link) => (
-                <a key={link.label} href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
+              {/* Solo redes con perfil configurado: sin URL, no se muestra. */}
+              {SOCIAL_LINKS.filter((link) => link.href).map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={`${link.label} (se abre en otra pestaña)`}>
                   {SOCIAL_ICON[link.label] ?? link.label[0]}
                 </a>
               ))}
@@ -33,9 +34,7 @@ export function Footer() {
             <Link to="/funciones">Funciones</Link>
             <Link to="/paco">La vida con Paco</Link>
             {SHOW_GUIDES_LINK && <a href="/guias/">Guías</a>}
-            <Link to="/precios">Precios</Link>
             <Link to="/preguntas">Preguntas</Link>
-            <Link to="/novedades">Novedades</Link>
           </div>
 
           <div className="footer-col">

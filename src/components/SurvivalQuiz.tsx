@@ -1,50 +1,31 @@
 import { useState } from 'react'
+import { SHOWCASE_EVENT, chaosTierFor, type ShowcaseKey } from '@/config/home'
 import { QUIZ_QUESTIONS } from '@/config/content'
 
-interface Result {
-  title: string
-  text: string
-  modules: string[]
+// Nivel de caos (0-100) a partir de los puntos acumulados. Puro y sin
+// efectos: no se guarda ni se envía ninguna respuesta.
+export function chaosPercent(points: number): number {
+  const max = QUIZ_QUESTIONS.reduce((sum, q) => sum + Math.max(...q.options.map((o) => o.chaosPoints)), 0)
+  return Math.round((points / max) * 100)
 }
 
-function resultFor(points: number, max: number): Result {
-  const ratio = points / max
-  if (ratio < 0.35) {
-    return {
-      title: 'Caos bajo control 🌿',
-      text: 'Vuestra familia ya está bastante organizada. PEPA le pone el último toque: menos cosas sueltas por apuntar a mano.',
-      modules: ['Calendario', 'Compras'],
-    }
-  }
-  if (ratio < 0.7) {
-    return {
-      title: 'Caos moderado — supervivencia posible 😅',
-      text: 'Hay días buenos y días de "¿quién iba a por el niño?". PEPA reparte lo que hace falta y avisa antes de que se os olvide.',
-      modules: ['Calendario', 'Economía', 'Cocina'],
-    }
-  }
-  return {
-    title: 'Caos nivel experto 🌪️',
-    text: 'Vuestra familia es justo el reto para el que se hizo PEPA. Con calendario, compras, economía y eventos en un solo sitio, se nota rápido.',
-    modules: ['Calendario', 'Compras', 'Economía', 'Eventos'],
-  }
+function openModule(key: ShowcaseKey) {
+  // El visor "Mira PEPA por dentro" escucha este evento; el ancla #por-dentro
+  // del propio enlace hace el scroll.
+  window.dispatchEvent(new CustomEvent(SHOWCASE_EVENT, { detail: key }))
 }
 
+// Test ligero y divertido en una tarjeta compacta. 5 preguntas, progreso
+// visible y un resultado con porcentaje de caos y una frase de PEPA.
 export function SurvivalQuiz() {
   const [step, setStep] = useState(0)
   const [points, setPoints] = useState(0)
   const [done, setDone] = useState(false)
 
-  const maxPoints = QUIZ_QUESTIONS.reduce((sum, q) => sum + Math.max(...q.options.map((o) => o.chaosPoints)), 0)
-
   function answer(chaosPoints: number) {
-    const next = points + chaosPoints
-    setPoints(next)
-    if (step + 1 >= QUIZ_QUESTIONS.length) {
-      setDone(true)
-    } else {
-      setStep(step + 1)
-    }
+    setPoints((p) => p + chaosPoints)
+    if (step + 1 >= QUIZ_QUESTIONS.length) setDone(true)
+    else setStep(step + 1)
   }
 
   function restart() {
@@ -54,35 +35,59 @@ export function SurvivalQuiz() {
   }
 
   if (done) {
-    const result = resultFor(points, maxPoints)
+    const percent = chaosPercent(points)
+    const tier = chaosTierFor(percent)
     return (
-      <div className="quiz-card quiz-result">
-        <p className="eyebrow">Resultado (con humor, no es un diagnóstico real)</p>
-        <h3>{result.title}</h3>
-        <p>{result.text}</p>
-        <p style={{ fontWeight: 700, color: 'var(--marino)' }}>Os vendría bien empezar por: {result.modules.join(' · ')}</p>
-        <div className="hero-cta-row">
-          <a href="#lista-de-espera" className="btn btn-primary">
-            Probar PEPA gratis →
-          </a>
-          <button type="button" className="btn btn-ghost" onClick={restart}>
+      <div className="hm-quiz hm-quiz--result" aria-live="polite">
+        <p className="hm-quiz-kicker">Nivel de caos familiar</p>
+        <p className="hm-quiz-percent">{percent}%</p>
+        <h3 className="hm-quiz-title">{tier.title}</h3>
+        <p className="hm-quiz-text">
+          <strong>PEPA dice:</strong> {tier.text}
+        </p>
+        <p className="hm-quiz-start">
+          Podéis empezar por:{' '}
+          {tier.modules.map((m, i) => (
+            <span key={m.key}>
+              {i > 0 && ' · '}
+              <a href="#por-dentro" className="hm-textlink" onClick={() => openModule(m.key)}>
+                {m.name}
+              </a>
+            </span>
+          ))}
+        </p>
+        <p className="hm-quiz-fine">
+          Es un juego: no se guarda ninguna respuesta.{' '}
+          <button type="button" className="hm-linkbutton" onClick={restart}>
             Repetir el test
           </button>
-        </div>
+        </p>
       </div>
     )
   }
 
   const q = QUIZ_QUESTIONS[step]
   return (
-    <div className="quiz-card">
-      <p className="quiz-progress">
-        Pregunta {step + 1} de {QUIZ_QUESTIONS.length}
-      </p>
-      <h3>{q.question}</h3>
-      <div className="quiz-options">
+    <div className="hm-quiz">
+      <div className="hm-quiz-progress">
+        <p className="hm-quiz-count">
+          {`Pregunta ${step + 1} de ${QUIZ_QUESTIONS.length}`}
+        </p>
+        <div
+          className="hm-quiz-bar"
+          role="progressbar"
+          aria-label="Progreso del test"
+          aria-valuemin={1}
+          aria-valuemax={QUIZ_QUESTIONS.length}
+          aria-valuenow={step + 1}
+        >
+          <span style={{ width: `${((step + 1) / QUIZ_QUESTIONS.length) * 100}%` }} />
+        </div>
+      </div>
+      <h3 className="hm-quiz-q">{q.question}</h3>
+      <div className="hm-quiz-options">
         {q.options.map((opt) => (
-          <button key={opt.label} type="button" className="quiz-option" onClick={() => answer(opt.chaosPoints)}>
+          <button key={opt.label} type="button" className="hm-quiz-option" onClick={() => answer(opt.chaosPoints)}>
             {opt.label}
           </button>
         ))}

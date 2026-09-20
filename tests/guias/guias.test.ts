@@ -143,7 +143,7 @@ describe('borradores y publicadas', () => {
   it('al publicar una, solo esa sale: páginas, RSS y sitemap; el borrador nunca', () => {
     const guides = [published({ slug: 'guia-a', relacionadas: ['guia-b'] }), mk({ slug: 'guia-b', titulo: 'Segunda guía de prueba distinta' })]
     const { files } = generateSite({ guides, staticSitemapXml: STATIC_SITEMAP, ctx: CTX })
-    expect(Object.keys(files).sort()).toEqual(['guias/guia-a/index.html', 'guias/index.html', 'guias/rss.xml', 'sitemap.xml'])
+    expect(Object.keys(files).sort()).toEqual(['guias/guia-a/index.html', 'guias/guias.json', 'guias/index.html', 'guias/rss.xml', 'sitemap.xml'])
     expect(files['sitemap.xml']).toContain(`${SITE_URL}/guias/guia-a/`)
     expect(files['sitemap.xml']).not.toContain('guia-b')
     expect(files['guias/rss.xml']).not.toContain('guia-b')

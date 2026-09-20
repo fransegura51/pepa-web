@@ -569,6 +569,16 @@ ${items}
 `
 }
 
+// Lista mínima de guías publicadas para la HOME (se lee en el navegador desde
+// /guias/guias.json): primero la guía principal y después las más recientes.
+// Los borradores nunca entran.
+export function buildGuidesJson(guides) {
+  const published = guides
+    .filter((g) => g.estado === 'publicado')
+    .sort((a, b) => Number(!!b.principal) - Number(!!a.principal) || (b.publicado > a.publicado ? 1 : b.publicado < a.publicado ? -1 : 0) || a.titulo.localeCompare(b.titulo, 'es'))
+  return JSON.stringify(published.map((g) => ({ slug: g.slug, titulo: g.titulo, resumen: g.resumen, tema: g.tema, publicado: g.publicado })))
+}
+
 // ---------------------------------------------------------------- orquestación
 
 // Devuelve { files: { "ruta/relativa/a/dist": contenido }, published }.
@@ -586,6 +596,7 @@ export function generateSite({ guides, staticSitemapXml, ctx, includeDrafts = fa
     for (const g of visible) files[`guias/${g.slug}/index.html`] = renderGuidePage(g, guides, ctx, { includeDrafts })
   }
   if (published.length > 0) {
+    files['guias/guias.json'] = buildGuidesJson(guides)
     files['guias/rss.xml'] = buildRss(guides)
     files['sitemap.xml'] = buildSitemap(staticSitemapXml, guides)
   }

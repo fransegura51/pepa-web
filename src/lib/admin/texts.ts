@@ -14,10 +14,14 @@ export const EDITABLE_TEXTS: EditableTextDef[] = [
   {
     key: 'hero_subtitle',
     label: 'Subtítulo del hero',
-    fallback: 'Calendario, compras, economía, cocina, eventos, documentos y mucho más. Todo en una sola app.',
+    fallback: 'Calendario, compras, economía, cocina, eventos y mucho más. Todo en una sola app.',
   },
-  { key: 'hero_cta', label: 'Botón principal del hero', fallback: 'Probar PEPA gratis →' },
-  { key: 'final_cta_title', label: 'Título de la llamada final', fallback: '¿Lista para más tiempo de lo que realmente importa?' },
+  { key: 'hero_cta', label: 'Botón principal del hero', fallback: 'Probar PEPA gratis' },
+  {
+    key: 'final_cta_title',
+    label: 'Título de la llamada final (una línea por frase)',
+    fallback: 'Tu familia seguirá siendo un caos.\nPero puede ser un caos organizado. 💚',
+  },
 ]
 
 export async function getAllTexts(): Promise<Record<string, string>> {

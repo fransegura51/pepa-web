@@ -71,22 +71,6 @@ button {
   padding: 0 20px;
 }
 
-.section {
-  padding: 64px 0;
-}
-
-.section--tight {
-  padding: 48px 0;
-}
-
-.section--pastel-turquesa {
-  background: #eafaf7;
-}
-
-.section--pastel-crema {
-  background: var(--crema);
-}
-
 .section--marino {
   background: var(--marino);
   color: #fff;
@@ -102,21 +86,6 @@ button {
   font-size: 1.4rem;
   color: var(--turquesa-dark);
   margin: 0 0 4px;
-}
-
-.section-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 32px;
-}
-
-.section-head p {
-  margin: 0;
-  color: var(--texto-suave);
-  max-width: 60ch;
 }
 
 /* Botones */
@@ -193,18 +162,6 @@ button {
   text-decoration: none;
 }
 
-.brand-mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: var(--turquesa);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-}
-
 .main-nav {
   display: none;
   gap: 22px;
@@ -240,7 +197,7 @@ button {
   cursor: pointer;
 }
 
-/* Móvil estrecho: el botón "Probar PEPA ahora" no debe partirse en 3 líneas */
+/* Móvil estrecho: el botón "Probar PEPA" de la cabecera no debe partirse en varias líneas */
 @media (max-width: 480px) {
   .site-header .header-actions .btn {
     white-space: nowrap;
@@ -289,221 +246,6 @@ button {
   display: inline-block;
 }
 
-.sticky-note--alt {
-  transform: rotate(2deg);
-  background: #fff;
-  border: 1px dashed var(--borde);
-}
-
-/* Hero */
-.hero {
-  padding: 56px 0 40px;
-}
-
-.hero .container {
-  display: grid;
-  gap: 40px;
-  align-items: center;
-}
-
-@media (min-width: 960px) {
-  .hero .container {
-    grid-template-columns: 1.05fr 0.95fr;
-  }
-}
-
-/* Logotipo maestro oficial en el Hero — solo CSS para el tamaño
-   responsive, el PNG en sí (src/assets/brand/) nunca se toca. */
-.hero-logo {
-  display: block;
-  width: min(260px, 62vw);
-  height: auto;
-  margin: 0 0 20px;
-}
-
-.hero-copy h1 {
-  font-size: clamp(2.1rem, 4.5vw, 3.1rem);
-}
-
-.hero-copy h1 .accent {
-  color: var(--turquesa-dark);
-}
-
-.hero-copy p {
-  font-size: 1.15rem;
-  color: var(--texto-suave);
-  max-width: 52ch;
-}
-
-.hero-cta-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin: 20px 0 24px;
-}
-
-.hero-microcopy {
-  font-size: 0.9rem;
-  color: var(--texto-suave);
-}
-
-.module-chip-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
-}
-
-.module-chip {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  width: 76px;
-  font-size: 0.78rem;
-  color: var(--marino-soft);
-  font-weight: 600;
-  text-align: center;
-}
-
-.module-chip-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-}
-
-/* El bloque del móvil se ciñe al ancho del móvil (+ margen para las notas) y
-   se centra en su columna: así las notas adhesivas se anclan a las esquinas
-   DEL MÓVIL y no a los bordes de una columna mucho más ancha (en escritorio
-   una nota quedaba tapada por el móvil y la otra colgaba 127 px a un lado). */
-.hero-visual {
-  position: relative;
-  width: 100%;
-  max-width: 340px;
-  margin: 0 auto;
-}
-
-/* Mockup de teléfono */
-.phone-mockup {
-  position: relative;
-  margin: 0 auto;
-  width: min(280px, 78vw);
-  border-radius: 40px;
-  background: var(--marino);
-  padding: 14px;
-  box-shadow: var(--shadow-soft);
-}
-
-.phone-mockup img {
-  border-radius: 26px;
-  width: 100%;
-  aspect-ratio: 9 / 19.5;
-  object-fit: cover;
-  background: #fff;
-}
-
-/* Carrusel dentro del mockup: las fotos se apilan y se van
-   cruzando con un fundido, sin mover el layout. */
-.phone-carousel {
-  position: relative;
-}
-
-.phone-carousel img {
-  border-radius: 26px;
-  width: 100%;
-  aspect-ratio: 9 / 19.5;
-  object-fit: cover;
-  background: #fff;
-  transition: opacity 0.6s ease;
-}
-
-.phone-carousel img:first-child {
-  position: relative;
-}
-
-.phone-carousel img:not(:first-child) {
-  position: absolute;
-  inset: 0;
-}
-
-.phone-carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.phone-carousel-dots span {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--borde);
-}
-
-.phone-carousel-dots span.is-active {
-  background: var(--turquesa);
-}
-
-.hero-visual .sticky-note {
-  position: absolute;
-  top: -18px;
-  right: 4px;
-  /* Por encima del móvil: la nota va "pegada" sobre él, no escondida detrás. */
-  z-index: 2;
-}
-
-.hero-visual .sticky-note--corner {
-  position: absolute;
-  /* Hay que anular top/right heredados de ".hero-visual .sticky-note": con
-     los cuatro lados fijados a la vez, una caja absoluta se estira hasta
-     ocupar todo el hero-visual y tapa el móvil (nota blanca gigante). */
-  top: auto;
-  right: auto;
-  bottom: 10px;
-  left: -14px;
-}
-
-/* Escritorio: hay sitio a los lados del móvil, así que las notas asoman
-   un poco más, de forma simétrica. En móvil se quedan como estaban (no
-   pueden salirse de la pantalla). */
-@media (min-width: 960px) {
-  .hero-visual .sticky-note {
-    top: -34px;
-    right: -30px;
-  }
-
-  .hero-visual .sticky-note--corner {
-    top: auto;
-    right: auto;
-    bottom: 18px;
-    left: -40px;
-  }
-}
-
-/* Módulos */
-.modules-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-@media (min-width: 640px) {
-  .modules-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 960px) {
-  .modules-grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-
 .module-card {
   border-radius: var(--radius-md);
   padding: 22px 16px;
@@ -532,48 +274,6 @@ button {
   font-size: 0.85rem;
   color: var(--marino-soft);
   margin: 0;
-}
-
-/* Beneficios */
-.benefits-layout {
-  display: grid;
-  gap: 40px;
-  align-items: center;
-}
-
-@media (min-width: 960px) {
-  .benefits-layout {
-    grid-template-columns: 0.85fr 1.15fr;
-  }
-}
-
-.benefit-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  margin-top: 20px;
-}
-
-.benefit-item {
-  background: var(--blanco);
-  border-radius: var(--radius-sm);
-  padding: 16px;
-  box-shadow: var(--shadow-softer);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  align-items: center;
-  text-align: center;
-}
-
-.benefit-item .icon {
-  font-size: 1.4rem;
-}
-
-.benefit-item span:last-child {
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--marino);
 }
 
 /* La vida con Paco */
@@ -628,127 +328,6 @@ button {
   padding: 40px 20px;
   text-align: center;
   color: var(--texto-suave);
-}
-
-/* Quiz */
-.quiz-card {
-  background: var(--blanco);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  box-shadow: var(--shadow-soft);
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.quiz-progress {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--turquesa-dark);
-  margin-bottom: 8px;
-}
-
-.quiz-options {
-  display: grid;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.quiz-option {
-  text-align: left;
-  padding: 14px 18px;
-  border-radius: var(--radius-sm);
-  border: 2px solid var(--borde);
-  background: var(--blanco);
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--texto);
-  font-size: 1rem;
-}
-
-.quiz-option:hover {
-  border-color: var(--turquesa);
-}
-
-.quiz-result h3 {
-  font-size: 1.6rem;
-}
-
-/* Demo */
-.demo-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 24px;
-}
-
-.demo-tab {
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 2px solid var(--borde);
-  background: var(--blanco);
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.demo-tab[aria-selected='true'] {
-  border-color: var(--turquesa);
-  background: #eafaf7;
-  color: var(--turquesa-dark);
-}
-
-.demo-frame {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--borde);
-  background: #fff;
-}
-
-.demo-frame img {
-  width: 100%;
-  display: block;
-  max-height: 420px;
-  object-fit: cover;
-  object-position: top;
-}
-
-.demo-frame-caption {
-  margin: 0;
-  padding: 16px 20px;
-  color: var(--texto-suave);
-  font-size: 0.95rem;
-  border-top: 1px solid var(--borde);
-}
-
-/* Eventos destacado */
-.events-highlight {
-  display: grid;
-  gap: 32px;
-  align-items: center;
-}
-
-@media (min-width: 960px) {
-  .events-highlight {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.events-stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.events-stat {
-  background: var(--blanco);
-  border-radius: var(--radius-sm);
-  padding: 14px;
-  box-shadow: var(--shadow-softer);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--marino-soft);
 }
 
 /* Pregunta de Paco */
@@ -1006,18 +585,6 @@ button {
   font-size: 0.85rem;
   color: #6b5900;
   margin-bottom: 24px;
-}
-
-/* Animación de entrada al scroll */
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
 }
 
 /* Novedades */
