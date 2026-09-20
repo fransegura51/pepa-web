@@ -377,8 +377,15 @@ button {
   font-size: 1.3rem;
 }
 
+/* El bloque del móvil se ciñe al ancho del móvil (+ margen para las notas) y
+   se centra en su columna: así las notas adhesivas se anclan a las esquinas
+   DEL MÓVIL y no a los bordes de una columna mucho más ancha (en escritorio
+   una nota quedaba tapada por el móvil y la otra colgaba 127 px a un lado). */
 .hero-visual {
   position: relative;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
 }
 
 /* Mockup de teléfono */
@@ -446,6 +453,8 @@ button {
   position: absolute;
   top: -18px;
   right: 4px;
+  /* Por encima del móvil: la nota va "pegada" sobre él, no escondida detrás. */
+  z-index: 2;
 }
 
 .hero-visual .sticky-note--corner {
@@ -457,6 +466,23 @@ button {
   right: auto;
   bottom: 10px;
   left: -14px;
+}
+
+/* Escritorio: hay sitio a los lados del móvil, así que las notas asoman
+   un poco más, de forma simétrica. En móvil se quedan como estaban (no
+   pueden salirse de la pantalla). */
+@media (min-width: 960px) {
+  .hero-visual .sticky-note {
+    top: -34px;
+    right: -30px;
+  }
+
+  .hero-visual .sticky-note--corner {
+    top: auto;
+    right: auto;
+    bottom: 18px;
+    left: -40px;
+  }
 }
 
 /* Módulos */

@@ -28,6 +28,24 @@ describe('notas adhesivas del hero', () => {
     expect(top).toMatch(/right:\s*4px/)
   })
 
+  it('el bloque del móvil se ciñe a su ancho y se centra: las notas se anclan al móvil, no a la columna', () => {
+    const block = rule('.hero-visual')
+    expect(block).toMatch(/max-width:\s*340px/)
+    expect(block).toMatch(/margin:\s*0 auto/)
+  })
+
+  it('las notas van por encima del móvil (no tapadas por él)', () => {
+    expect(rule('.hero-visual .sticky-note')).toMatch(/z-index:\s*2/)
+  })
+
+  it('en escritorio las notas asoman de forma simétrica y solo ahí', () => {
+    const start = css.indexOf('@media (min-width: 960px) {\n  .hero-visual .sticky-note {')
+    expect(start, 'falta la regla de escritorio de las notas').toBeGreaterThanOrEqual(0)
+    const block = css.slice(start, css.indexOf('\n}\n', start))
+    expect(block).toMatch(/right:\s*-30px/)
+    expect(block).toMatch(/left:\s*-40px/)
+  })
+
   it('en móvil estrecho el botón de la cabecera no se parte en varias líneas', () => {
     const start = css.indexOf('.site-header .header-actions .btn {')
     expect(start, 'falta la regla móvil de la cabecera').toBeGreaterThanOrEqual(0)
