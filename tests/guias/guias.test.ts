@@ -260,7 +260,8 @@ describe('primer grupo de guías (contenido real)', () => {
 
   it('son las 8 previstas y pasan la validación', () => {
     expect(guides).toHaveLength(8)
-    expect(validateGuides(guides, TODAY)).toEqual([])
+    // Con la fecha real de hoy: las guías reales tienen fechas reales (no futuras).
+    expect(validateGuides(guides, new Date().toISOString().slice(0, 10))).toEqual([])
   })
 
   it('están publicadas, cada una con fecha real y revisión anotada', () => {

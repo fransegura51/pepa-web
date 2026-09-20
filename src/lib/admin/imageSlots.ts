@@ -13,11 +13,11 @@ export interface ImageSlotDef {
 }
 
 export const IMAGE_SLOTS: ImageSlotDef[] = [
-  { key: 'home', label: 'Inicio (hero)', fallback: asset('screenshots/home.svg'), fallbackAlt: 'Pantalla de inicio de PEPA' },
-  { key: 'calendario', label: 'Calendario', fallback: asset('screenshots/calendario.svg'), fallbackAlt: 'Calendario compartido de PEPA' },
-  { key: 'compras', label: 'Compras', fallback: asset('screenshots/compras.svg'), fallbackAlt: 'Lista de la compra de PEPA' },
-  { key: 'economia', label: 'Economía', fallback: asset('screenshots/economia.svg'), fallbackAlt: 'Economía familiar en PEPA' },
-  { key: 'cocina', label: 'Cocina', fallback: asset('screenshots/cocina.svg'), fallbackAlt: 'Menú semanal en PEPA' },
-  { key: 'eventos', label: 'Eventos', fallback: asset('screenshots/eventos.svg'), fallbackAlt: 'Un evento organizado con PEPA' },
+  { key: 'home', label: 'Inicio (hero)', fallback: asset('screenshots/home.webp'), fallbackAlt: 'Pantalla de inicio de PEPA' },
+  { key: 'calendario', label: 'Calendario', fallback: asset('screenshots/calendario.webp'), fallbackAlt: 'Calendario compartido de PEPA' },
+  { key: 'compras', label: 'Compras', fallback: asset('screenshots/compras.webp'), fallbackAlt: 'Lista de la compra de PEPA' },
+  { key: 'economia', label: 'Economía', fallback: asset('screenshots/economia.webp'), fallbackAlt: 'Economía familiar en PEPA' },
+  { key: 'cocina', label: 'Cocina', fallback: asset('screenshots/cocina.webp'), fallbackAlt: 'Menú semanal en PEPA' },
+  { key: 'eventos', label: 'Eventos', fallback: asset('screenshots/eventos.webp'), fallbackAlt: 'Un evento organizado con PEPA' },
   { key: 'documentos', label: 'Documentos', fallback: asset('screenshots/documentos.svg'), fallbackAlt: 'Documentos de la familia en PEPA' },
 ]

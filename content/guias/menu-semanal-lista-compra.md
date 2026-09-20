@@ -8,6 +8,7 @@ tema: Menú semanal y compra
 intencion: informacional
 estado: publicado
 publicado: 2026-09-19
+actualizado: 2026-09-20
 revisado_por: Equipo PEPA
 revisado_fecha: 2026-09-19
 relacionadas:
@@ -60,6 +61,6 @@ Un rato el domingo puede ahorrar mucho durante la semana: cocer legumbres, lavar
 
 ## Cómo lo hace PEPA
 
-En PEPA planificas el menú semanal y, con un botón, se añaden a la lista de la compra los ingredientes de cada plato. Solo se apuntan los que todavía no estaban en la lista, así que no se repite nada. La lista es compartida y puede organizarse por tiendas.
+En PEPA planificas el menú semanal, con desayuno, comida, merienda y cena de cada día. Guardas tus recetas con sus ingredientes y, desde cada receta, eliges los ingredientes que te faltan y los añades a la lista de la compra, indicando en qué tienda los vas a comprar. La lista es compartida y se organiza por tiendas.
 
-Puedes probarlo en la demo, con un menú de ejemplo, sin registrarte y sin que se guarde nada. Y si te interesa controlar también cuánto gastas, lee [cómo controlar el presupuesto familiar sin hojas complicadas](/guias/presupuesto-familiar-sin-hojas-complicadas/).
+Puedes ver cómo queda el menú semanal en la demo, con capturas reales de PEPA y una familia de ejemplo, sin registrarte. Y si te interesa controlar también cuánto gastas, lee [cómo controlar el presupuesto familiar sin hojas complicadas](/guias/presupuesto-familiar-sin-hojas-complicadas/).

@@ -49,7 +49,7 @@ export function AdminImages() {
             <div className="admin-item-head">
               <span className="admin-item-title">{slot.label}</span>
               <span className={`admin-badge ${isCustom ? 'admin-badge--published' : 'admin-badge--draft'}`}>
-                {isCustom ? 'Foto real' : 'Ilustración de ejemplo'}
+                {isCustom ? 'Foto subida por ti' : slot.fallback.endsWith('.svg') ? 'Ilustración de ejemplo' : 'Captura de la app (por defecto)'}
               </span>
             </div>
             <img src={current} alt={slot.fallbackAlt} style={{ width: 90, borderRadius: 10, marginTop: 8 }} />
@@ -66,7 +66,7 @@ export function AdminImages() {
               </label>
               {isCustom && (
                 <button type="button" className="danger" onClick={() => handleReset(slot.key)}>
-                  Volver a la ilustración de ejemplo
+                  Volver a la imagen por defecto
                 </button>
               )}
             </div>

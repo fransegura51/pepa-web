@@ -3,8 +3,6 @@ import { parseDemoEntry } from '../../src/demo/entry'
 import { buildSignupUrl } from '../../src/demo/links'
 import { demoReducer, initialState } from '../../src/demo/state'
 
-const TODAY = new Date(2026, 8, 16)
-
 describe('entrada a la demo desde una guía', () => {
   it('reconoce zona y guía válidas', () => {
     expect(parseDemoEntry('?zona=economia&desde=presupuesto-familiar-sin-hojas-complicadas')).toEqual({
@@ -32,21 +30,17 @@ describe('entrada a la demo desde una guía', () => {
 })
 
 describe('abrir la demo en una zona', () => {
-  it('abre esa pestaña directamente y no ofrece el recorrido', () => {
-    const s = initialState(TODAY, 'cumpleanos')
-    expect(s.tab).toBe('cumpleanos')
-    expect(s.tourStatus).toBe('done')
+  it('abre esa pantalla directamente', () => {
+    expect(initialState('cumpleanos').tab).toBe('cumpleanos')
   })
 
-  it('sin zona, todo igual que antes', () => {
-    const s = initialState(TODAY)
-    expect(s.tab).toBe('inicio')
-    expect(s.tourStatus).toBe('ask')
+  it('sin zona, abre en Inicio como siempre', () => {
+    expect(initialState().tab).toBe('inicio')
+    expect(initialState(null).tab).toBe('inicio')
   })
 
-  it('reiniciar vuelve al estado normal', () => {
-    const s = demoReducer(initialState(TODAY, 'cocina'), { type: 'reset', today: TODAY })
-    expect(s).toEqual(initialState(TODAY))
+  it('desde una zona se puede seguir navegando', () => {
+    expect(demoReducer(initialState('cocina'), { type: 'next' }).tab).toBe('cumpleanos')
   })
 })
 

@@ -8,6 +8,7 @@ tema: Presupuesto familiar
 intencion: informacional
 estado: publicado
 publicado: 2026-09-19
+actualizado: 2026-09-20
 revisado_por: Equipo PEPA
 revisado_fecha: 2026-09-19
 relacionadas:
@@ -60,6 +61,6 @@ Las averías, las multas y las facturas inesperadas ocurren. Dedicar una pequeñ
 
 ## Cómo lo hace PEPA
 
-En PEPA registras los gastos, los clasificas por categorías y ves de un vistazo cuánto llevas frente al presupuesto de cada una, con un aviso cuando algo se acerca al límite. También puedes subir la foto de un ticket para que Pepa lea los productos, y, si tu banco lo permite, enlazar tus cuentas para traer los movimientos.
+En PEPA registras los gastos, los clasificas por categorías y ves de un vistazo cuánto llevas frente al presupuesto de cada una. El resumen del mes te enseña ingresos, gastos y ahorro, y Pepa añade unas conclusiones para que sepas cómo vais. También puedes subir la foto de un ticket para que Pepa lea los productos y, si tu banco lo permite, enlazar tus cuentas para traer los movimientos.
 
-En la demo puedes apuntar un gasto de ejemplo y ver cómo cambia el presupuesto y el resumen de Pepa, todo con datos ficticios. Y si la compra es lo que más pesa, mira [cómo preparar un menú semanal y convertirlo en lista de compra](/guias/menu-semanal-lista-compra/).
+En la demo puedes ver cómo queda la pantalla de Economía, con capturas reales de PEPA y una familia de ejemplo con datos ficticios. Y si la compra es lo que más pesa, mira [cómo preparar un menú semanal y convertirlo en lista de compra](/guias/menu-semanal-lista-compra/).

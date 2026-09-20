@@ -3,13 +3,10 @@ import { resolve } from 'node:path'
 import { renderToString } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { buildSignupUrl, DEMO_ORIGIN } from '../../src/demo/links'
-import { CalendarioScreen, CocinaScreen, ComprasScreen, CumpleanosScreen, EconomiaScreen, InicioScreen } from '../../src/demo/screens'
 import { DemoPage } from '../../src/demo/DemoPage'
-import { initialState } from '../../src/demo/state'
 import { DEMO_URL } from '../../src/config/site'
 
 const ROOT = resolve(__dirname, '../..')
-const TODAY = new Date(2026, 8, 16)
 
 describe('la demo no se indexa', () => {
   const demoHtml = readFileSync(resolve(ROOT, 'demo/index.html'), 'utf8')
@@ -52,37 +49,29 @@ describe('CTA "Crear mi familia"', () => {
 })
 
 describe('render de la demo', () => {
-  const props = { state: initialState(TODAY), dispatch: () => {}, today: TODAY, todayIndex: 2 }
-
   it('la página muestra el aviso de datos ficticios, la salida y el CTA', () => {
     const html = renderToString(<DemoPage />)
-    expect(html).toContain('Estás usando una demostración con datos ficticios')
+    expect(html).toContain('Estás viendo una demostración con datos ficticios')
+    expect(html).toContain('Son capturas reales de PEPA')
     expect(html).toContain('Crear mi familia')
     expect(html).toContain('Salir de la demo')
-    expect(html).toContain('Reiniciar demo')
     expect(html).toContain('origen=demo')
     for (const label of ['Inicio', 'Calendario', 'Compras', 'Economía', 'Cocina', 'Cumpleaños']) {
       expect(html).toContain(label)
     }
   })
 
-  it('cada pantalla se pinta sin errores con los datos de ejemplo', () => {
-    const screens = {
-      inicio: InicioScreen,
-      calendario: CalendarioScreen,
-      compras: ComprasScreen,
-      economia: EconomiaScreen,
-      cocina: CocinaScreen,
-      cumpleanos: CumpleanosScreen,
-    }
-    for (const [name, Screen] of Object.entries(screens)) {
-      const html = renderToString(<Screen {...props} />)
-      expect(html.length, name).toBeGreaterThan(200)
-    }
+  it('abre en la primera pantalla con su captura real y la explicación de Pepa', () => {
+    const html = renderToString(<DemoPage />)
+    expect(html).toContain('Pantalla 1 de 6')
+    expect(html).toContain('/screenshots/home.webp')
+    expect(html).toMatch(/width="750"/)
+    expect(html).toContain('Aquí empieza el día')
+    expect(html).toContain('Siguiente')
   })
 
-  it('el calendario enseña los planes del día seleccionado', () => {
-    const html = renderToString(<CalendarioScreen {...props} />)
-    expect(html).toContain('Cena con los abuelos')
+  it('ya no ofrece nada que dependa de datos o de guardar cosas', () => {
+    const html = renderToString(<DemoPage />)
+    expect(html).not.toMatch(/Reiniciar demo|<form|<input/)
   })
 })
