@@ -185,14 +185,14 @@ export function Historia() {
           <div className="hs-antes-row">
             <div className="hs-antes-item">
               <HistoriaFoto slot="historia-lista-antes" />
-              <p className="hs-evo-cap">Antes: la idea.</p>
+              <p className="hs-evo-cap">Antes: la primera versión.</p>
             </div>
             <p className="hs-evo-arrow" aria-hidden="true">
               →
             </p>
             <div className="hs-antes-item">
               <HistoriaFoto slot="historia-lista-despues" />
-              <p className="hs-evo-cap">Después: la app de verdad.</p>
+              <p className="hs-evo-cap">Después: cómo es ahora.</p>
             </div>
           </div>
         </div>

@@ -14,8 +14,8 @@ sustituye el hueco reservado por tu imagen.
 | `historia-primera-pepa` | La primera PEPA (solo su cara). Se muestra en un marco redondo | 1:1 (cuadrada) |
 | `historia-desarrollo` | Un momento del desarrollo (junto a `historia-inicios`) | 4:3 |
 | `historia-evolucion` | PEPA de cuerpo entero: cómo evolucionó | 2:3 (vertical) |
-| `historia-lista-antes` | La idea inicial de la lista de la compra (antes) | 3:2 |
-| `historia-lista-despues` | La lista de la compra en la app real (después) | ~4:3 |
+| `historia-lista-antes` | La lista de la compra en la primera versión (la tarjeta azul) | ~4:3 |
+| `historia-lista-despues` | La lista de la compra ahora (PEPA con la libreta) | 3:2 |
 | `historia-paco` | Paco (personaje 3D de cuerpo entero), junto al texto de su sección | 2:3 (vertical) |
 
 Ejemplo: `src/assets/historia/historia-abuela-pepa.jpg`.

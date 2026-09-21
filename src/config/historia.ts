@@ -76,16 +76,16 @@ export const FOTOS: Record<FotoSlot, FotoInfo> = {
     icon: '🎨',
   },
   'historia-lista-antes': {
-    placeholder: 'Aquí irá cómo era la lista de la compra al principio',
-    alt: 'La idea inicial de la lista de la compra de PEPA: una libreta con casillas vacías y PEPA apoyada en un carrito lleno',
-    ratio: '3 / 2',
-    icon: '📝',
-  },
-  'historia-lista-despues': {
-    placeholder: 'Aquí irá la lista de la compra de la app de verdad',
-    alt: 'La lista de la compra ya dentro de la app: la tarjeta «Compra pendiente» con los productos que faltan',
+    placeholder: 'Aquí irá la lista de la compra de la primera versión de la app',
+    alt: 'La lista de la compra en la primera versión de la app: la tarjeta azul «Compra pendiente» con los productos que faltan',
     ratio: '678 / 487',
     icon: '🛒',
+  },
+  'historia-lista-despues': {
+    placeholder: 'Aquí irá cómo es ahora la lista de la compra de PEPA',
+    alt: 'La lista de la compra de PEPA ahora: una libreta con casillas y PEPA apoyada en un carrito lleno de comida',
+    ratio: '3 / 2',
+    icon: '📝',
   },
   'historia-paco': {
     placeholder: 'Aquí irá Paco',
