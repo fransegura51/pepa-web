@@ -56,15 +56,15 @@ describe('render de la demo', () => {
     expect(html).toContain('Crear mi familia')
     expect(html).toContain('Salir de la demo')
     expect(html).toContain('origen=demo')
-    for (const label of ['Inicio', 'Calendario', 'Compras', 'Economía', 'Cocina', 'Cumpleaños']) {
+    for (const label of ['Inicio', 'Familia', 'Calendario', 'Eventos', 'Compras', 'Cocina', 'Economía', 'Cumpleaños', 'Contactos', 'Documentos']) {
       expect(html).toContain(label)
     }
   })
 
   it('abre en la primera pantalla con su captura real y la explicación de Pepa', () => {
     const html = renderToString(<DemoPage />)
-    expect(html).toContain('Pantalla 1 de 6')
-    expect(html).toContain('/screenshots/home.webp')
+    expect(html).toMatch(/Pantalla 1 de \d+/)
+    expect(html).toContain('/screenshots/demo/home-1.webp')
     expect(html).toMatch(/width="750"/)
     expect(html).toContain('Aquí empieza el día')
     expect(html).toContain('Siguiente')

@@ -15,8 +15,8 @@ export const SITE_URL = 'https://pepafamilyapp.es'
 export const SITE_NAME = 'PEPA Family App'
 export const DEFAULT_OG_IMAGE = '/og/pepa-guias.png'
 
-// Zonas de la demo a las que puede llevar una guía (mismas que las
-// pestañas de src/demo/state.ts; hay una prueba que lo comprueba).
+// Zonas de la demo a las que puede llevar una guía (todas las entiende
+// src/demo/entry.ts; hay una prueba que lo comprueba).
 export const DEMO_ZONES = {
   inicio: 'Inicio',
   calendario: 'Calendario',

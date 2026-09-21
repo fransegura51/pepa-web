@@ -16,9 +16,13 @@ describe('entrada a la demo desde una guía', () => {
   })
 
   it('ignora zonas que no existen', () => {
-    for (const zona of ['admin', 'ubicacion', 'INICIO', '', '../x', '<script>']) {
+    for (const zona of ['admin', 'ajustes', 'INICIO', '', '../x', '<script>']) {
       expect(parseDemoEntry(`?zona=${encodeURIComponent(zona)}`).tab).toBeNull()
     }
+  })
+
+  it('la zona antigua «cumpleanos» sigue llevando al evento del cumpleaños', () => {
+    expect(parseDemoEntry('?zona=cumpleanos').tab).toBe('eventos')
   })
 
   it('solo acepta guías con formato de slug (nada de texto libre)', () => {
@@ -30,8 +34,8 @@ describe('entrada a la demo desde una guía', () => {
 })
 
 describe('abrir la demo en una zona', () => {
-  it('abre esa pantalla directamente', () => {
-    expect(initialState('cumpleanos').tab).toBe('cumpleanos')
+  it('abre esa sección directamente', () => {
+    expect(initialState('eventos').tab).toBe('eventos')
   })
 
   it('sin zona, abre en Inicio como siempre', () => {
@@ -40,7 +44,9 @@ describe('abrir la demo en una zona', () => {
   })
 
   it('desde una zona se puede seguir navegando', () => {
-    expect(demoReducer(initialState('cocina'), { type: 'next' }).tab).toBe('cumpleanos')
+    const s = demoReducer(initialState('cocina'), { type: 'next' })
+    expect(s.tab).toBe('cocina')
+    expect(s.screen).toBe(1)
   })
 })
 

@@ -17,7 +17,9 @@ export function parseDemoEntry(search: string): DemoEntry {
   const params = new URLSearchParams(search)
   const zone = params.get('zona')
   const from = params.get('desde')
-  const tab = DEMO_TABS.find((t) => t.id === zone)?.id ?? null
+  // «cumpleanos» era la zona de la demo antigua (el evento del cumpleaños);
+  // las guías que la usan siguen llegando a ese mismo sitio.
+  const tab = zone === 'cumpleanos' ? 'eventos' : (DEMO_TABS.find((t) => t.id === zone)?.id ?? null)
   const guide = from && from.length <= MAX_GUIDE_LENGTH && GUIDE_RE.test(from) ? from : null
   return { tab, guide }
 }

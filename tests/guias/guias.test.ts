@@ -246,11 +246,17 @@ describe('enlace a la demo', () => {
   it('lleva a la zona indicada con la guía de origen, y la demo lo entiende', () => {
     const href = demoHref('cumpleanos', 'cumpleanos-infantil-paso-a-paso')
     expect(href).toBe('/demo/?zona=cumpleanos&desde=cumpleanos-infantil-paso-a-paso')
-    expect(parseDemoEntry(href.split('?')[1])).toEqual({ tab: 'cumpleanos', guide: 'cumpleanos-infantil-paso-a-paso' })
+    // La zona «cumpleanos» de las guías abre el módulo de Eventos de la demo.
+    expect(parseDemoEntry(href.split('?')[1])).toEqual({ tab: 'eventos', guide: 'cumpleanos-infantil-paso-a-paso' })
   })
 
-  it('las zonas de las guías son exactamente las pestañas de la demo', () => {
-    expect(Object.keys(DEMO_ZONES).sort()).toEqual(DEMO_TABS.map((t) => t.id).sort())
+  it('todas las zonas de las guías las entiende la demo y llevan a una sección que existe', () => {
+    const tabs = DEMO_TABS.map((t) => t.id)
+    for (const zone of Object.keys(DEMO_ZONES)) {
+      const tab = parseDemoEntry(`?zona=${zone}`).tab
+      expect(tab, zone).not.toBeNull()
+      expect(tabs, zone).toContain(tab)
+    }
   })
 })
 
