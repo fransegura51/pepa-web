@@ -177,7 +177,8 @@ export function Historia() {
           </div>
           <div className="hs-nace-photos hs-reveal">
             <HistoriaFoto slot="historia-inicios" />
-            <HistoriaFoto slot="historia-desarrollo" />
+            {/* Solo sale cuando existe la imagen real (historia-desarrollo). */}
+            {hasHistoriaImage('historia-desarrollo') && <HistoriaFoto slot="historia-desarrollo" />}
           </div>
         </div>
 

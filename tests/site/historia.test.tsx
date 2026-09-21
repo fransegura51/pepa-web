@@ -133,8 +133,9 @@ describe('fotos reales: nada inventado', () => {
       'historia-paco',
       'historia-primera-pepa',
     ])
-    // La foto de la abuela (y su flecha) solo salen cuando existe la imagen real.
-    const shown = Object.keys(FOTOS).filter((slot) => slot !== 'historia-abuela-pepa' || REAL.some((f) => f.startsWith(slot)))
+    // Estas piezas solo salen cuando existe la imagen real (la abuela también lleva su flecha).
+    const HIDDEN_UNTIL_REAL = ['historia-abuela-pepa', 'historia-desarrollo']
+    const shown = Object.keys(FOTOS).filter((slot) => !HIDDEN_UNTIL_REAL.includes(slot) || REAL.some((f) => f.startsWith(slot)))
     for (const slot of shown) {
       expect(html, slot).toContain(`data-slot="${slot}"`)
     }
