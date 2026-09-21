@@ -9,6 +9,7 @@ const NAV_LINKS: ({ kind: 'route'; to: string; label: string } | { kind: 'page';
   { kind: 'route', to: '/funciones', label: 'Funciones' },
   { kind: 'page', href: DEMO_URL, label: 'Demo' },
   { kind: 'route', to: '/paco', label: 'La vida con Paco' },
+  { kind: 'route', to: '/historia', label: 'Historia' },
   ...(SHOW_GUIDES_LINK ? [{ kind: 'page' as const, href: '/guias/', label: 'Guías' }] : []),
   { kind: 'route', to: '/preguntas', label: 'Preguntas' },
 ]

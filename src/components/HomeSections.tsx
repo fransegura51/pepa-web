@@ -108,7 +108,7 @@ function platformOf(url: string): string | null {
   }
 }
 
-function VideoCard({ video, big }: { video: PacoVideoRow; big: boolean }) {
+export function VideoCard({ video, big }: { video: PacoVideoRow; big: boolean }) {
   const title = video.title.trim()
   const platform = video.platform?.trim() || platformOf(video.videoUrl)
   return (

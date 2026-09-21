@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { applyRouteMeta } from './route-meta.mjs'
 
 // Problema real reportado (Google Search Console): la prueba en vivo de
 // https://pepafamilyapp.es/funciones devuelve "404 - No se ha
@@ -35,7 +36,8 @@ for (const loc of locs) {
   if (path === '/' || path === '') continue // la raíz ya es dist/index.html
   const dir = join(distDir, path)
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true })
-  writeFileSync(join(dir, 'index.html'), indexHtml)
+  // Igual para todas, salvo las páginas con SEO propio (scripts/route-meta.mjs).
+  writeFileSync(join(dir, 'index.html'), applyRouteMeta(indexHtml, path))
   created++
 }
 

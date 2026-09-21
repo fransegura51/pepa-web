@@ -7,6 +7,7 @@ import { PromoBanner } from '@/components/PromoBanner'
 import { Home } from '@/pages/Home'
 import { Funciones } from '@/pages/Funciones'
 import { Paco } from '@/pages/Paco'
+import { Historia } from '@/pages/Historia'
 import { Precios } from '@/pages/Precios'
 import { Preguntas } from '@/pages/Preguntas'
 import { Novedades } from '@/pages/Novedades'
@@ -77,6 +78,7 @@ export function App() {
           <Route path="/" element={<Home />} />
           <Route path="/funciones" element={<Funciones />} />
           <Route path="/paco" element={<Paco />} />
+          <Route path="/historia" element={<Historia />} />
           <Route path="/precios" element={<Precios />} />
           <Route path="/preguntas" element={<Preguntas />} />
           <Route path="/novedades" element={<Novedades />} />

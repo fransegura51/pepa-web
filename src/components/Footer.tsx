@@ -33,6 +33,7 @@ export function Footer() {
             <h4>PEPA</h4>
             <Link to="/funciones">Funciones</Link>
             <Link to="/paco">La vida con Paco</Link>
+            <Link to="/historia">Cómo empezó todo</Link>
             {SHOW_GUIDES_LINK && <a href="/guias/">Guías</a>}
             <Link to="/preguntas">Preguntas</Link>
           </div>

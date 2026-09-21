@@ -98,7 +98,7 @@ describe('una sola galería de capturas', () => {
 })
 
 describe('todo lo que parece clicable hace algo', () => {
-  const allowedInternal = new Set(['#por-dentro', '/demo/', '/guias/', '/funciones', '/paco', '/preguntas', '/privacidad', '/condiciones', '/contacto', '/'])
+  const allowedInternal = new Set(['#por-dentro', '/demo/', '/guias/', '/funciones', '/paco', '/historia', '/preguntas', '/privacidad', '/condiciones', '/contacto', '/'])
   const socialUrls = new Set(SOCIAL_LINKS.map((l) => l.href))
 
   it('cada enlace de la HOME, la cabecera y el pie tiene un destino que existe', () => {
@@ -160,9 +160,9 @@ describe('todo lo que parece clicable hace algo', () => {
 })
 
 describe('cabecera y pie', () => {
-  it('la cabecera: logo, 5 enlaces reales y un único botón "Probar PEPA"', () => {
+  it('la cabecera: logo, 6 enlaces reales y un único botón "Probar PEPA"', () => {
     const nav = all(headerHtml, /<nav class="main-nav"[\s\S]*?<\/nav>/g)[0]
-    expect(all(nav, /<a [^>]*>[\s\S]*?<\/a>/g).map(textOf)).toEqual(['Funciones', 'Demo', 'La vida con Paco', 'Guías', 'Preguntas'])
+    expect(all(nav, /<a [^>]*>[\s\S]*?<\/a>/g).map(textOf)).toEqual(['Funciones', 'Demo', 'La vida con Paco', 'Historia', 'Guías', 'Preguntas'])
     expect(headerHtml).not.toContain('Precios')
     expect(all(headerHtml, /<a [^>]*class="btn btn-primary"[^>]*>[\s\S]*?<\/a>/g).map(textOf)).toEqual(['Probar PEPA'])
     expect(headerHtml).toMatch(/pepa-family-app-logo-master/)

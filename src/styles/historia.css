@@ -1,0 +1,967 @@
+/* Página «Cómo empezó todo» (/historia). Móvil primero. Todo con prefijo hs-
+   para no chocar con el resto de la web. Usa los tokens de marca (tokens.css). */
+
+.hs-page {
+  --hs-accent: #0d7d70;
+  --hs-ink: #12303a;
+  --hs-rosa: #b0123f; /* rosa PEPA oscurecido para texto (contraste AA sobre rosa pastel) */
+  --hs-rosa-pastel: #fbe2e4; /* rosa pastel oficial de la marca */
+  --hs-warm: #fff7d6;
+  overflow-x: clip;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .hs-page {
+    --hs-accent: #3ad1bf;
+  }
+}
+
+.hs-narrow {
+  max-width: 720px;
+}
+
+.hs-center {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.hs-section {
+  padding: 56px 0;
+}
+
+@media (min-width: 900px) {
+  .hs-section {
+    padding: 96px 0;
+  }
+}
+
+/* ---------- Tipografía ---------- */
+
+.hs-eyebrow {
+  margin: 0 0 6px;
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  color: var(--hs-accent);
+}
+
+.hs-eyebrow--rosa {
+  color: var(--hs-rosa);
+}
+
+.hs-eyebrow--light {
+  color: #ffe98a;
+}
+
+.hs-h1,
+.hs-h2,
+.hs-step-title {
+  font-family: var(--font-display);
+  color: var(--texto);
+  letter-spacing: -0.01em;
+}
+
+.hs-h1 {
+  margin: 0 0 20px;
+  font-size: clamp(2.8rem, 9vw, 5.2rem);
+  line-height: 1;
+}
+
+.hs-h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.9rem, 4.6vw, 3rem);
+  line-height: 1.1;
+}
+
+.hs-h2--light {
+  color: #fff;
+}
+
+.hs-page p {
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.hs-prose p {
+  margin: 0 0 1em;
+}
+
+.hs-prose--light,
+.hs-prose--light p {
+  color: #dde6f6;
+}
+
+.hs-lead {
+  font-size: 1.25rem !important;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.hs-big-line {
+  margin: 18px 0 !important;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.2rem) !important;
+  font-weight: 800;
+  line-height: 1.15 !important;
+  color: var(--hs-accent);
+}
+
+.hs-big-line--rosa,
+.hs-quien .hs-big-line--rosa {
+  color: var(--hs-rosa);
+}
+
+/* ---------- Animaciones suaves (solo con JS y sin «reducir movimiento») ---------- */
+
+.hs-anim .hs-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.hs-anim .hs-reveal.hs-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hs-anim .hs-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Fotos y huecos reservados ---------- */
+
+.hs-photo {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--blanco);
+  box-shadow: var(--shadow-soft);
+}
+
+.hs-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hs-photo figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 28px 14px 12px;
+  color: #fff;
+  font-size: 0.9rem;
+  background: linear-gradient(to top, rgba(15, 31, 61, 0.8), transparent);
+}
+
+.hs-photo--empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  text-align: center;
+  color: #5b4a1a;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.7), transparent 55%),
+    linear-gradient(150deg, #fff3c4, #ffe1d6);
+  border: 2px dashed rgba(91, 74, 26, 0.35);
+  box-shadow: none;
+}
+
+.hs-photo-icon {
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.hs-photo-note {
+  max-width: 22ch;
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+/* ---------- 1 · Hero ---------- */
+
+.hs-hero {
+  padding: 40px 0 56px;
+  background:
+    radial-gradient(60% 55% at 90% 0%, rgba(18, 165, 148, 0.16), transparent 70%),
+    radial-gradient(50% 50% at 0% 100%, rgba(244, 161, 31, 0.16), transparent 70%);
+}
+
+.hs-hero-grid {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+
+.hs-hero-photo {
+  max-width: min(100%, 300px);
+  margin-inline: auto;
+}
+
+.hs-hero-quote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4.4vw, 2.3rem) !important;
+  line-height: 1.2 !important;
+  color: var(--texto);
+}
+
+.hs-hero-quote strong {
+  color: var(--hs-accent);
+}
+
+@media (min-width: 900px) {
+  .hs-hero {
+    padding: 72px 0 88px;
+  }
+  .hs-hero-grid {
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 56px;
+  }
+  .hs-hero-photo {
+    max-width: 420px;
+    margin-inline: 0;
+    transform: rotate(2deg);
+  }
+}
+
+/* ---------- 2 · El principio ---------- */
+
+.hs-chores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hs-chores li {
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  font-weight: 600;
+  color: var(--texto);
+  box-shadow: var(--shadow-softer);
+}
+
+.hs-marker {
+  margin: 8px 0 0;
+  font-size: 1.2rem !important;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.hs-marker mark {
+  padding: 0 4px;
+  border-radius: 4px;
+  color: #3a3000;
+  background: linear-gradient(transparent 55%, #ffe66d 55%);
+}
+
+/* ---------- 3 · El problema ---------- */
+
+.hs-problema {
+  background: var(--hs-warm);
+  color: var(--hs-ink);
+}
+
+.hs-problema .hs-h2,
+.hs-problema p,
+.hs-problema .hs-lead {
+  color: var(--hs-ink);
+}
+
+.hs-problema .hs-eyebrow {
+  color: #0d7d70;
+}
+
+.hs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hs-tags li {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 2px solid #12303a;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #12303a;
+  background: #fff;
+}
+
+.hs-tags--soft li {
+  border-color: rgba(13, 125, 112, 0.5);
+  background: rgba(18, 165, 148, 0.1);
+  color: var(--texto);
+}
+
+.hs-tags--light li {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.hs-callout {
+  margin: 28px 0 20px;
+  padding: 24px 24px 24px 28px;
+  border-left: 8px solid var(--turquesa);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: #fff;
+  color: var(--hs-ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.6vw, 2rem);
+  line-height: 1.25;
+  box-shadow: var(--shadow-softer);
+}
+
+.hs-callout strong {
+  color: #0d7d70;
+}
+
+.hs-section:not(.hs-problema) .hs-callout {
+  background: var(--blanco);
+  color: var(--texto);
+}
+
+/* Punto de inflexión: la pregunta */
+.hs-turn {
+  max-width: 860px;
+  margin-top: 48px;
+  padding: 40px 24px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #0f1f3d, #0d7d70);
+  box-shadow: var(--shadow-soft);
+}
+
+.hs-problema .hs-turn-label {
+  margin: 0 0 8px;
+  font-family: var(--font-hand);
+  font-size: 1.6rem !important;
+  color: #ffe98a;
+}
+
+.hs-problema .hs-turn-question {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 5.2vw, 3rem) !important;
+  font-weight: 800;
+  line-height: 1.12 !important;
+  color: #fff;
+}
+
+/* ---------- 4 · Nace PEPA ---------- */
+
+.hs-nace-grid {
+  display: grid;
+  gap: 36px;
+  align-items: start;
+}
+
+.hs-nace-photos {
+  display: grid;
+  gap: 16px;
+}
+
+.hs-verbs {
+  font-size: 1.1rem !important;
+  font-style: italic;
+  color: var(--hs-accent);
+}
+
+.hs-gag {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 1.6rem !important;
+  line-height: 1.15 !important;
+  color: var(--texto);
+}
+
+@media (min-width: 900px) {
+  .hs-nace-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+  }
+  .hs-nace-photos {
+    position: sticky;
+    top: 96px;
+  }
+  .hs-nace-photos .hs-photo:nth-child(1) {
+    transform: rotate(-2deg);
+  }
+  .hs-nace-photos .hs-photo:nth-child(2) {
+    transform: rotate(2deg);
+  }
+}
+
+/* ---------- 5 · ¿Quién es PEPA realmente? ---------- */
+
+.hs-quien {
+  padding: 64px 0 72px;
+  color: #3a1420;
+  background:
+    radial-gradient(70% 50% at 50% 0%, rgba(255, 255, 255, 0.7), transparent 70%),
+    var(--hs-rosa-pastel);
+}
+
+.hs-quien .hs-h2 {
+  color: #3a1420;
+}
+
+.hs-quien p {
+  color: #3a1420;
+}
+
+.hs-quien-head {
+  max-width: 720px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.hs-quien-art {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.hs-person {
+  width: min(78%, 300px);
+  margin: 0;
+  text-align: center;
+}
+
+.hs-person .hs-photo {
+  border: 6px solid #fff;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(176, 18, 63, 0.18);
+}
+
+.hs-person figcaption {
+  margin-top: 10px;
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  color: var(--hs-rosa);
+}
+
+.hs-person--pepa img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 18px 40px rgba(176, 18, 63, 0.18);
+  background: #fff;
+}
+
+.hs-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin: 4px 0 !important;
+  color: var(--hs-rosa) !important;
+  font-family: var(--font-hand);
+  font-size: 1.4rem !important;
+  line-height: 1 !important;
+}
+
+.hs-arrow svg {
+  transform: rotate(90deg);
+  margin: 50px 0; /* la flecha girada ocupa 120 px en vertical */
+}
+
+.hs-quien-text {
+  margin-inline: auto;
+}
+
+.hs-aside {
+  padding-left: 16px;
+  border-left: 3px solid rgba(176, 18, 63, 0.4);
+  font-style: italic;
+}
+
+.hs-real {
+  margin: 32px 0 0;
+  padding: 28px 24px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #b0123f, #e81856);
+  box-shadow: 0 18px 40px rgba(176, 18, 63, 0.28);
+}
+
+.hs-real p {
+  margin: 0 !important;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.6vw, 2rem) !important;
+  line-height: 1.2 !important;
+  color: #fff !important;
+}
+
+.hs-real p + p {
+  margin-top: 6px !important;
+  font-size: clamp(1.6rem, 4.4vw, 2.4rem) !important;
+}
+
+@media (min-width: 900px) {
+  .hs-quien {
+    padding: 96px 0 104px;
+  }
+  .hs-quien-art {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+  .hs-person {
+    width: 300px;
+  }
+  .hs-arrow svg {
+    transform: none;
+    margin: 0;
+  }
+}
+
+/* ---------- 6 · Construir PEPA utilizándola ---------- */
+
+.hs-notes {
+  display: grid;
+  gap: 16px;
+  margin: 32px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hs-note {
+  padding: 18px 20px;
+  border-radius: 6px;
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  line-height: 1.15;
+  color: #4a3f00;
+  background: var(--nota-amarilla);
+  box-shadow: var(--shadow-softer);
+}
+
+.hs-note--1 {
+  transform: rotate(-1.5deg);
+}
+.hs-note--2 {
+  transform: rotate(1deg);
+  background: #d8f5e8;
+  color: #0b3d34;
+}
+.hs-note--3 {
+  transform: rotate(-0.8deg);
+  background: #ffdce0;
+  color: #5c1024;
+}
+.hs-note--4 {
+  transform: rotate(1.4deg);
+  background: #eadcff;
+  color: #2c1a55;
+  font-weight: 700;
+}
+
+.hs-grow-title {
+  margin: 32px 0 12px;
+  font-family: var(--font-hand);
+  font-size: 1.7rem !important;
+  color: var(--hs-accent);
+}
+
+.hs-grow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.hs-grow li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--borde);
+  background: var(--blanco);
+  font-weight: 700;
+  color: var(--texto);
+  box-shadow: var(--shadow-softer);
+}
+
+.hs-grow li span {
+  font-size: 1.5rem;
+}
+
+.hs-usar-photos {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 700px) {
+  .hs-notes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hs-grow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .hs-usar-photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) {
+  .hs-notes {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .hs-grow {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* ---------- 7 · Una idea que define PEPA ---------- */
+
+.hs-idea {
+  padding: 72px 0;
+  color: #fff;
+  background:
+    radial-gradient(60% 80% at 100% 0%, rgba(255, 233, 138, 0.25), transparent 70%),
+    linear-gradient(135deg, #0d7d70, #0f1f3d);
+}
+
+.hs-idea-eyebrow {
+  margin: 0 0 12px;
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffe98a;
+}
+
+.hs-idea-quote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.hs-idea-quote strong {
+  color: #ffe98a;
+}
+
+@media (min-width: 900px) {
+  .hs-idea {
+    padding: 104px 0;
+  }
+}
+
+/* ---------- 8 · Línea temporal ---------- */
+
+.hs-linea {
+  background: linear-gradient(to bottom, transparent, rgba(18, 165, 148, 0.07));
+}
+
+.hs-timeline {
+  position: relative;
+  max-width: 980px;
+  margin: 40px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Móvil: línea vertical a la izquierda */
+.hs-timeline::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 27px;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, var(--turquesa), #f4a11f 60%, #e81856);
+}
+
+.hs-step {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding: 0 0 26px;
+}
+
+.hs-step-dot {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 58px;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 4px solid var(--crema);
+  background: var(--turquesa-dark);
+  box-shadow: var(--shadow-softer);
+  font-size: 1.6rem;
+}
+
+.hs-step-card {
+  flex: 1;
+  min-width: 0;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--borde);
+  background: var(--blanco);
+  box-shadow: var(--shadow-softer);
+}
+
+.hs-step-num {
+  margin: 0 0 2px;
+  font-size: 0.8rem !important;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hs-accent);
+}
+
+.hs-step-title {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.hs-step-text {
+  margin: 0 !important;
+  font-size: 1rem !important;
+  color: var(--texto-suave);
+}
+
+/* Etapas con personalidad propia */
+.hs-step--pregunta .hs-step-card {
+  border: 0;
+  color: #fff;
+  background: linear-gradient(135deg, #0f1f3d, #0d7d70);
+}
+.hs-step--pregunta .hs-step-title,
+.hs-step--pregunta .hs-step-num,
+.hs-step--pregunta .hs-step-text {
+  color: #fff;
+}
+.hs-step--pregunta .hs-step-text {
+  font-family: var(--font-display);
+  font-size: 1.3rem !important;
+  font-weight: 600;
+  line-height: 1.25 !important;
+}
+.hs-step--pregunta .hs-step-dot {
+  background: #f4a11f;
+}
+
+.hs-step--nombre .hs-step-card {
+  border: 0;
+  color: #3a1420;
+  background: var(--hs-rosa-pastel);
+}
+.hs-step--nombre .hs-step-title {
+  color: var(--hs-rosa);
+}
+.hs-step--nombre .hs-step-num,
+.hs-step--nombre .hs-step-text {
+  color: #3a1420;
+}
+.hs-step--nombre .hs-step-dot {
+  background: #e81856;
+}
+
+.hs-step--futuro .hs-step-dot {
+  background: #12303a;
+}
+
+/* Escritorio: zigzag alrededor de una línea central */
+@media (min-width: 900px) {
+  .hs-timeline::before {
+    left: 50%;
+    transform: translateX(-2px);
+  }
+  .hs-step {
+    display: grid;
+    grid-template-columns: 1fr 58px 1fr;
+    gap: 28px;
+    padding-bottom: 32px;
+    align-items: center;
+  }
+  .hs-step-dot {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .hs-step:nth-child(odd) .hs-step-card {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
+  }
+  .hs-step:nth-child(even) .hs-step-card {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .hs-step--pregunta .hs-step-card,
+  .hs-step--nombre .hs-step-card {
+    padding: 24px 26px;
+  }
+}
+
+/* ---------- 9 · De nuestra casa a otras familias ---------- */
+
+.hs-otras {
+  background: var(--hs-warm);
+  color: var(--hs-ink);
+}
+
+.hs-otras .hs-h2,
+.hs-otras p,
+.hs-otras .hs-lead {
+  color: var(--hs-ink);
+}
+
+.hs-otras .hs-eyebrow {
+  color: #0d7d70;
+}
+
+/* ---------- 10 · Qué queremos construir ---------- */
+
+.hs-construir {
+  padding: 72px 0 80px;
+  color: #fff;
+  background:
+    radial-gradient(60% 60% at 0% 100%, rgba(18, 165, 148, 0.4), transparent 70%),
+    #0f1f3d;
+}
+
+.hs-closing {
+  margin: 36px 0 0 !important;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4.6vw, 2.6rem) !important;
+  line-height: 1.2 !important;
+  color: #fff !important;
+}
+
+.hs-closing strong {
+  font-size: 1.25em;
+  color: #ffe98a;
+}
+
+.hs-closing span {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #b9f0e8;
+}
+
+@media (min-width: 900px) {
+  .hs-construir {
+    padding: 104px 0 112px;
+  }
+}
+
+/* ---------- 11 · Los vídeos de Paco ---------- */
+
+.hs-paco {
+  padding: 64px 0 72px;
+  color: #fff;
+  background: linear-gradient(to bottom, #12303a, #0f1f3d);
+}
+
+.hs-paco-quote {
+  margin: 8px 0 20px !important;
+  font-family: var(--font-hand);
+  font-size: clamp(2rem, 6vw, 3rem) !important;
+  line-height: 1.1 !important;
+  color: #ffe98a;
+}
+
+.hs-videos {
+  margin-top: 32px;
+}
+
+.hs-paco-photo {
+  max-width: 640px;
+  margin: 32px auto 0;
+}
+
+.hs-paco-close {
+  max-width: 720px;
+  margin: 8px auto 28px !important;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3.6vw, 1.9rem) !important;
+  line-height: 1.25 !important;
+  color: #fff !important;
+}
+
+.hs-paco-close strong {
+  color: #ffe98a;
+}
+
+.hs-paco .btn-light {
+  color: var(--marino);
+}
+
+@media (min-width: 900px) {
+  .hs-paco {
+    padding: 96px 0 104px;
+  }
+}
+
+/* ---------- Cierre ---------- */
+
+.hs-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.hs-page .btn-primary {
+  background: var(--turquesa-dark);
+  color: #fff;
+}
+
+.hs-page .btn-ghost {
+  color: var(--texto);
+}
+
+.hs-page :focus-visible {
+  outline: 3px solid var(--turquesa);
+  outline-offset: 3px;
+}
+
+.hs-paco :focus-visible,
+.hs-construir :focus-visible,
+.hs-idea :focus-visible {
+  outline-color: #ffe98a;
+}
