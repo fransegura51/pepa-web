@@ -10,7 +10,7 @@ sustituye el hueco reservado por tu imagen.
 |---|---|---|
 | `historia-familia` | Imagen de la familia (portada de la página) | 4:5 (vertical) |
 | `historia-abuela-pepa` | Imagen de la abuela que inspiró a PEPA | 4:5 (vertical) |
-| `historia-inicios` | Imágenes o notas de los primeros días | 4:3 |
+| `historia-inicios` | Una de las primeras capturas de la app (ahora: el calendario, vertical) | vertical, ancho máx. 300 px |
 | `historia-primera-pepa` | La primera PEPA (solo su cara). Se muestra en un marco redondo | 1:1 (cuadrada) |
 | `historia-desarrollo` | Un momento del desarrollo (junto a `historia-inicios`) | 4:3 |
 | `historia-evolucion` | PEPA de cuerpo entero: cómo evolucionó | 2:3 (vertical) |

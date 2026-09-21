@@ -49,8 +49,9 @@ export const FOTOS: Record<FotoSlot, FotoInfo> = {
   },
   'historia-inicios': {
     placeholder: 'Aquí irán imágenes de los primeros días',
-    alt: 'Los primeros días de PEPA',
-    ratio: '4 / 3',
+    alt: 'Una de las primeras versiones del calendario de PEPA en el móvil, con los planes de un día',
+    caption: 'Una de las primeras capturas del calendario',
+    ratio: '738 / 1500',
     icon: '📝',
   },
   'historia-primera-pepa': {

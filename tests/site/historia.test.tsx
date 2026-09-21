@@ -92,7 +92,8 @@ describe('estructura de la página «Cómo empezó todo»', () => {
 
   it('las herramientas de IA se mencionan sin hacer publicidad (sin enlaces ni logotipos)', () => {
     for (const nombre of ['Claude Code', 'ChatGPT', 'Gemini']) expect(text).toContain(nombre)
-    const seccion = html.slice(html.indexOf('hs-nace'), html.indexOf('hs-quien'))
+    // El texto de esa parte (no las imágenes de al lado) no lleva enlaces ni logotipos.
+    const seccion = html.slice(html.indexOf('hs-nace-copy'), html.indexOf('hs-nace-photos'))
     expect(seccion).not.toMatch(/<a[\s>]|<img/)
   })
 })

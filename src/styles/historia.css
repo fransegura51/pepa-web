@@ -382,6 +382,12 @@
   gap: 16px;
 }
 
+/* Captura de móvil (vertical): más estrecha que las demás */
+.hs-nace-photos [data-slot='historia-inicios'] {
+  max-width: 300px;
+  margin-inline: auto;
+}
+
 .hs-verbs {
   font-size: 1.1rem !important;
   font-style: italic;
