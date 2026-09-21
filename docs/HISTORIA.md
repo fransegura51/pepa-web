@@ -14,11 +14,11 @@ y en el pie como **Cómo empezó todo**.
 | SEO propio en el HTML estático (título, descripción, Open Graph, datos estructurados) | `scripts/route-meta.mjs` |
 | Fotos reales | `src/assets/historia/` (ver el README de esa carpeta) |
 
-## Fotos: cómo se sustituye un hueco
+## Imágenes (fotos, ilustraciones o 3D): cómo se sustituye un hueco
 
 Los 7 huecos (`historia-familia`, `historia-abuela-pepa`, `historia-inicios`,
 `historia-primera-pepa`, `historia-desarrollo`, `historia-evolucion`, `historia-paco`) se ven como
-un marco cálido con una nota escrita a mano. Para poner la foto real basta con guardar
+un marco cálido con una nota escrita a mano. Para poner la imagen definitiva basta con guardar
 `src/assets/historia/<hueco>.jpg` (o png/webp/avif). No hay que cambiar código.
 
 El personaje oficial de PEPA se muestra con la referencia facial oficial

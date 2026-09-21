@@ -6,8 +6,8 @@ export const HISTORIA_DESCRIPTION =
   'PEPA no nació porque quisiéramos crear una app: nació porque una familia necesitaba una. Así empezó, quién inspiró su nombre y por qué queremos compartirla con otras familias.'
 
 // ---------------------------------------------------------------- Fotos reales
-// Cada hueco se rellena sin tocar código: basta con guardar una imagen con el
-// nombre del hueco (jpg, jpeg, png, webp o avif) en src/assets/historia/.
+// Pueden ser fotos, ilustraciones o imágenes en 3D. Cada hueco se rellena sin tocar
+// código: basta con guardar una imagen con el nombre del hueco (jpg, jpeg, png, webp o avif) en src/assets/historia/.
 // Ejemplo: src/assets/historia/historia-abuela-pepa.jpg
 // Mientras no exista, se ve un hueco reservado.
 
@@ -34,19 +34,19 @@ export interface FotoInfo {
 
 export const FOTOS: Record<FotoSlot, FotoInfo> = {
   'historia-familia': {
-    placeholder: 'Aquí irá una foto real de nuestra familia',
+    placeholder: 'Aquí irá una imagen de nuestra familia',
     alt: 'Nuestra familia',
     ratio: '4 / 5',
     icon: '👨‍👩‍👧‍👦',
   },
   'historia-abuela-pepa': {
-    placeholder: 'Aquí irá una foto real de la abuela que inspiró a PEPA',
+    placeholder: 'Aquí irá una imagen de la abuela que inspiró a PEPA',
     alt: 'La abuela de nuestra familia, en quien se inspira PEPA',
     ratio: '4 / 5',
     icon: '💛',
   },
   'historia-inicios': {
-    placeholder: 'Aquí irán fotos o notas de los primeros días',
+    placeholder: 'Aquí irán imágenes de los primeros días',
     alt: 'Los primeros días de PEPA',
     ratio: '4 / 3',
     icon: '📝',

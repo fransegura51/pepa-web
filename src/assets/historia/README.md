@@ -1,16 +1,16 @@
-# Fotos reales de «Cómo empezó todo» (/historia)
+# Imágenes de «Cómo empezó todo» (/historia)
 
-Esta carpeta está vacía a propósito: no hay que inventar ninguna foto.
+Esta carpeta está vacía a propósito. Las imágenes pueden ser fotos, ilustraciones o imágenes en 3D.
 
-Para poner una foto real, guarda aquí una imagen con **exactamente** el nombre del hueco
+Para poner una imagen, guarda aquí un archivo con **exactamente** el nombre del hueco
 (`.jpg`, `.jpeg`, `.png`, `.webp` o `.avif`). No hay que tocar código: al compilar, la web
 sustituye el hueco reservado por tu imagen.
 
 | Nombre del archivo | Qué va aquí | Proporción del marco |
 |---|---|---|
-| `historia-familia` | Foto real de la familia (portada de la página) | 4:5 (vertical) |
-| `historia-abuela-pepa` | Foto real de la abuela que inspiró a PEPA | 4:5 (vertical) |
-| `historia-inicios` | Fotos o notas de los primeros días | 4:3 |
+| `historia-familia` | Imagen de la familia (portada de la página) | 4:5 (vertical) |
+| `historia-abuela-pepa` | Imagen de la abuela que inspiró a PEPA | 4:5 (vertical) |
+| `historia-inicios` | Imágenes o notas de los primeros días | 4:3 |
 | `historia-primera-pepa` | Captura de la primera versión de la app | 4:3 |
 | `historia-desarrollo` | Un momento del desarrollo | 4:3 |
 | `historia-evolucion` | Cómo ha cambiado el diseño | 4:3 |
