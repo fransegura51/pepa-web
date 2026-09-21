@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { readdirSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server'
@@ -10,6 +10,9 @@ import { Historia } from '../../src/pages/Historia'
 import { ROUTE_META, applyRouteMeta } from '../../scripts/route-meta.mjs'
 
 const ROOT = resolve(__dirname, '../..')
+
+// Imágenes definitivas ya colocadas en src/assets/historia/ (el resto son huecos reservados).
+const REAL = readdirSync(resolve(ROOT, 'src/assets/historia')).filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f))
 
 function render(node: React.ReactElement): string {
   return renderToString(<StaticRouter location="/historia">{node}</StaticRouter>)
@@ -117,7 +120,7 @@ describe('línea temporal', () => {
 })
 
 describe('fotos reales: nada inventado', () => {
-  it('los 7 huecos existen y, sin foto real, salen como hueco reservado (no como imagen)', () => {
+  it('los 7 huecos existen y, sin imagen definitiva, salen como hueco reservado (no como imagen)', () => {
     expect(Object.keys(FOTOS).sort()).toEqual([
       'historia-abuela-pepa',
       'historia-desarrollo',
@@ -130,17 +133,19 @@ describe('fotos reales: nada inventado', () => {
     for (const slot of Object.keys(FOTOS)) {
       expect(html, slot).toContain(`data-slot="${slot}"`)
     }
-    expect([...html.matchAll(/hs-photo--empty/g)].length).toBe(7)
+    expect([...html.matchAll(/hs-photo--empty/g)].length).toBe(7 - REAL.length)
   })
 
   it('el único personaje que aparece es la referencia oficial de PEPA, con alt y tamaño', () => {
     const imgs = [...html.matchAll(/<img[^>]*>/g)].map((m) => m[0])
-    expect(imgs).toHaveLength(1)
-    expect(imgs[0]).toMatch(/pepa-face-reference-official/)
-    expect(imgs[0]).toMatch(/alt="[^"]{20,}"/)
-    expect(imgs[0]).toMatch(/width="1254"/)
-    expect(imgs[0]).toMatch(/height="1254"/)
-    expect(imgs[0]).toMatch(/loading="lazy"/)
+    expect(imgs).toHaveLength(1 + REAL.length)
+    const face = imgs.find((i) => /pepa-face-reference-official/.test(i))!
+    expect(face).toMatch(/alt="[^"]{20,}"/)
+    expect(face).toMatch(/width="1254"/)
+    expect(face).toMatch(/height="1254"/)
+    expect(face).toMatch(/loading="lazy"/)
+    // Toda imagen definitiva lleva un texto alternativo de verdad.
+    for (const i of imgs) expect(i).toMatch(/alt="[^"]{20,}"/)
   })
 })
 

@@ -35,8 +35,8 @@ export interface FotoInfo {
 export const FOTOS: Record<FotoSlot, FotoInfo> = {
   'historia-familia': {
     placeholder: 'Aquí irá una imagen de nuestra familia',
-    alt: 'Nuestra familia',
-    ratio: '4 / 5',
+    alt: 'Ilustración en 3D de nuestra familia: el padre, la madre y sus dos hijos abrazados en el sofá de casa',
+    ratio: '1222 / 1287',
     icon: '👨‍👩‍👧‍👦',
   },
   'historia-abuela-pepa': {
