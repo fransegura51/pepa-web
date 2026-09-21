@@ -17,6 +17,12 @@ function imageFor(slot: FotoSlot): string | null {
   return null
 }
 
+// ¿Hay ya una imagen definitiva para este hueco? Sirve para ocultar piezas enteras
+// (p. ej. la foto de la abuela) mientras no exista, en vez de enseñar un marco vacío.
+export function hasHistoriaImage(slot: FotoSlot): boolean {
+  return imageFor(slot) !== null
+}
+
 // Marco de foto de la historia. Nunca se inventa ninguna imagen: o es la real
 // o es un hueco reservado, con las mismas proporciones para que el diseño no
 // cambie al sustituirla.

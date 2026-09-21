@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { HistoriaFoto } from '@/components/HistoriaFoto'
+import { HistoriaFoto, hasHistoriaImage } from '@/components/HistoriaFoto'
 import { VideoCard } from '@/components/HomeSections'
 import {
   AI_TOOLS,
@@ -63,6 +63,7 @@ export function Historia() {
       .catch(() => setVideos([]))
   }, [])
   const shownVideos = (videos ?? []).slice(0, 3)
+  const hasAbuela = hasHistoriaImage('historia-abuela-pepa')
 
   return (
     <div className="hs-page" ref={page}>
@@ -209,16 +210,21 @@ export function Historia() {
           </header>
 
           <div className="hs-quien-art hs-reveal">
-            <figure className="hs-person">
-              <HistoriaFoto slot="historia-abuela-pepa" />
-              <figcaption>La abuela de la familia</figcaption>
-            </figure>
-            <p className="hs-arrow" aria-hidden="true">
-              <span>inspiración</span>
-              <svg viewBox="0 0 120 24" width="120" height="24" focusable="false">
-                <path d="M2 12h108m0 0-9-8m9 8-9 8" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </p>
+            {/* La foto de la abuela y la flecha solo salen cuando existe la imagen real. */}
+            {hasAbuela && (
+              <>
+                <figure className="hs-person">
+                  <HistoriaFoto slot="historia-abuela-pepa" />
+                  <figcaption>La abuela de la familia</figcaption>
+                </figure>
+                <p className="hs-arrow" aria-hidden="true">
+                  <span>inspiración</span>
+                  <svg viewBox="0 0 120 24" width="120" height="24" focusable="false">
+                    <path d="M2 12h108m0 0-9-8m9 8-9 8" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </p>
+              </>
+            )}
             <figure className="hs-person hs-person--pepa">
               <img
                 src={pepaFace}

@@ -133,10 +133,16 @@ describe('fotos reales: nada inventado', () => {
       'historia-paco',
       'historia-primera-pepa',
     ])
-    for (const slot of Object.keys(FOTOS)) {
+    // La foto de la abuela (y su flecha) solo salen cuando existe la imagen real.
+    const shown = Object.keys(FOTOS).filter((slot) => slot !== 'historia-abuela-pepa' || REAL.some((f) => f.startsWith(slot)))
+    for (const slot of shown) {
       expect(html, slot).toContain(`data-slot="${slot}"`)
     }
-    expect([...html.matchAll(/hs-photo--empty/g)].length).toBe(Object.keys(FOTOS).length - REAL.length)
+    expect([...html.matchAll(/hs-photo--empty/g)].length).toBe(shown.length - REAL.length)
+    if (!REAL.some((f) => f.startsWith('historia-abuela-pepa'))) {
+      expect(html).not.toContain('historia-abuela-pepa')
+      expect(html).not.toContain('hs-arrow')
+    }
   })
 
   it('el único personaje que aparece es la referencia oficial de PEPA, con alt y tamaño', () => {
