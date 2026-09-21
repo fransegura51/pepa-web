@@ -657,7 +657,12 @@
     transform: none;
   }
   .hs-antes-item {
-    width: 460px;
+    width: auto;
+    max-width: 460px;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .hs-antes-row .hs-evo-arrow {
     flex: 0 0 auto;
   }
 }
