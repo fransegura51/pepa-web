@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 import { Header } from '@/components/Header'
+import { PageViewTracker } from '@/components/PageViewTracker'
 import { Footer } from '@/components/Footer'
 import { PromoBanner } from '@/components/PromoBanner'
 import { Home } from '@/pages/Home'
@@ -60,6 +61,7 @@ export function App() {
   return (
     <>
       <ScrollToTop />
+      <PageViewTracker />
       <Routes>
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminHome />} />

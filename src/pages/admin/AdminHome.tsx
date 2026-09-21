@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { VisitStatsPanel } from '@/components/admin/VisitStats'
 
 const ACTIONS = [
   { to: '/admin/videos?nuevo=1', label: '+ Añadir vídeo' },
@@ -19,6 +20,7 @@ export function AdminHome() {
           </Link>
         ))}
       </div>
+      <VisitStatsPanel />
     </div>
   )
 }

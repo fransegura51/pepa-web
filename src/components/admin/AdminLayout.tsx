@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet } from 'react-router-dom'
 import { supabase } from '@/lib/supabaseClient'
 import { checkIsAdmin, signOut, getSessionEmail } from '@/lib/admin/auth'
 import { AdminLogin } from '@/pages/admin/AdminLogin'
+import { excludeThisDeviceFromVisits } from '@/lib/visits'
 
 const SECTIONS = [
   { to: '/admin', label: 'Inicio', end: true },
@@ -27,6 +28,8 @@ export function AdminLayout() {
     }
     const admin = await checkIsAdmin()
     setEmail(await getSessionEmail())
+    // La administradora no se cuenta a sí misma en el contador de visitas de este navegador.
+    if (admin) excludeThisDeviceFromVisits()
     setStatus(admin ? 'in' : 'denied')
   }
 

@@ -170,3 +170,84 @@
   box-shadow: var(--shadow-soft);
   text-align: center;
 }
+
+/* Visitas a la web (AdminHome) */
+.visit-stats {
+  margin-top: 32px;
+  padding: 18px;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radius-md);
+}
+.visit-note {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  margin: 4px 0 12px;
+}
+.visit-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+.visit-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px;
+  background: var(--crema);
+  border: 1px solid var(--borde);
+  border-radius: var(--radius-sm);
+}
+.visit-card-label {
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+}
+.visit-card-value {
+  font-size: 1.6rem;
+  color: var(--marino);
+  line-height: 1.1;
+}
+.visit-card-sub {
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+}
+.visit-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 110px;
+  margin-top: 14px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--borde);
+}
+.visit-bar-col {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.visit-bar {
+  width: 100%;
+  background: var(--turquesa);
+  border-radius: 3px 3px 0 0;
+}
+.visit-bars-axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--texto-suave);
+  margin-top: 4px;
+}
+.visit-top {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.visit-top li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--borde);
+  font-size: 0.92rem;
+}

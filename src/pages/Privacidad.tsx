@@ -158,6 +158,10 @@ export function Privacidad() {
           permisos de conexión (Google, banco…) se guardan cifrados y no son accesibles desde la propia aplicación
           web. Puedes proteger además la app con un PIN o huella/cara desde Configuración.
         </p>
+        <p>
+          Esta web pública cuenta las visitas de forma anónima (páginas vistas y visitantes aproximados por día). No
+          usa cookies de seguimiento y no guarda tu dirección IP, tu navegador ni ningún identificador personal.
+        </p>
 
         <h2>9. Cuánto tiempo se guardan</h2>
         <p>
