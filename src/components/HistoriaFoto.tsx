@@ -24,10 +24,11 @@ export function HistoriaFoto({ slot, className = '', priority = false }: { slot:
   const info = FOTOS[slot]
   const src = imageFor(slot)
   const style = { aspectRatio: info.ratio }
+  const shape = info.round ? ' hs-photo--round' : ''
 
   if (src) {
     return (
-      <figure className={`hs-photo ${className}`} style={style} data-slot={slot}>
+      <figure className={`hs-photo${shape} ${className}`} style={style} data-slot={slot}>
         <img src={src} alt={info.alt} loading={priority ? 'eager' : 'lazy'} decoding="async" />
         {info.caption && <figcaption>{info.caption}</figcaption>}
       </figure>
@@ -35,7 +36,7 @@ export function HistoriaFoto({ slot, className = '', priority = false }: { slot:
   }
 
   return (
-    <div className={`hs-photo hs-photo--empty ${className}`} style={style} data-slot={slot} aria-hidden="true">
+    <div className={`hs-photo hs-photo--empty${shape} ${className}`} style={style} data-slot={slot} aria-hidden="true">
       <span className="hs-photo-icon">{info.icon}</span>
       <span className="hs-photo-note">{info.placeholder}</span>
     </div>

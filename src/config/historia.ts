@@ -30,6 +30,8 @@ export interface FotoInfo {
   // Proporción del marco (evita saltos de diseño al cargar).
   ratio: string
   icon: string
+  // Marco redondo (para imágenes que ya son un círculo).
+  round?: boolean
 }
 
 export const FOTOS: Record<FotoSlot, FotoInfo> = {
@@ -52,10 +54,11 @@ export const FOTOS: Record<FotoSlot, FotoInfo> = {
     icon: '📝',
   },
   'historia-primera-pepa': {
-    placeholder: 'Aquí irá una captura de la primera versión de PEPA',
-    alt: 'Primera versión de la aplicación PEPA',
-    ratio: '4 / 3',
-    icon: '📱',
+    placeholder: 'Aquí irá la primera PEPA',
+    alt: 'La primera imagen de PEPA: solo su cara, con su pelo gris, sus gafas de carey y su sonrisa cercana',
+    ratio: '1 / 1',
+    icon: '🙂',
+    round: true,
   },
   'historia-desarrollo': {
     placeholder: 'Aquí irá un momento del desarrollo de PEPA',
@@ -64,9 +67,9 @@ export const FOTOS: Record<FotoSlot, FotoInfo> = {
     icon: '🛠️',
   },
   'historia-evolucion': {
-    placeholder: 'Aquí irá la evolución del diseño de PEPA',
-    alt: 'Cómo ha ido cambiando el diseño de PEPA',
-    ratio: '4 / 3',
+    placeholder: 'Aquí irá cómo evolucionó PEPA',
+    alt: 'PEPA de cuerpo entero, con su taza, su bolsa «Una vida más fácil» y una tableta',
+    ratio: '2 / 3',
     icon: '🎨',
   },
   'historia-paco': {

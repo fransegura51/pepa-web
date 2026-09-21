@@ -619,9 +619,66 @@
   font-size: 1.5rem;
 }
 
-.hs-usar-photos {
-  display: grid;
-  gap: 16px;
+/* Evolución de PEPA: primera imagen (solo la cara) → PEPA de cuerpo entero */
+.hs-evo {
+  text-align: center;
+}
+
+.hs-evo-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hs-evo-item {
+  width: min(78%, 280px);
+}
+
+.hs-evo-item--body {
+  width: min(70%, 250px);
+}
+
+.hs-evo-cap {
+  margin: 12px 0 0 !important;
+  font-family: var(--font-hand);
+  font-size: 1.5rem !important;
+  line-height: 1.1 !important;
+  color: var(--hs-accent);
+}
+
+.hs-evo-arrow {
+  margin: 0 !important;
+  font-family: var(--font-display);
+  font-size: 2.6rem !important;
+  line-height: 1 !important;
+  color: var(--hs-accent);
+  transform: rotate(90deg);
+}
+
+.hs-photo--round {
+  border-radius: 50%;
+}
+
+.hs-photo--round img {
+  transform: scale(1.07); /* recorta el aro exterior de la imagen y deja solo el círculo */
+}
+
+@media (min-width: 700px) {
+  .hs-evo-row {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+  }
+  .hs-evo-arrow {
+    transform: none;
+  }
+  .hs-evo-item,
+  .hs-evo-item--body {
+    width: 280px;
+    flex: 0 0 auto;
+  }
 }
 
 @media (min-width: 700px) {
@@ -630,9 +687,6 @@
   }
   .hs-grow {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .hs-usar-photos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

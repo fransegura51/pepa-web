@@ -11,9 +11,9 @@ sustituye el hueco reservado por tu imagen.
 | `historia-familia` | Imagen de la familia (portada de la página) | 4:5 (vertical) |
 | `historia-abuela-pepa` | Imagen de la abuela que inspiró a PEPA | 4:5 (vertical) |
 | `historia-inicios` | Imágenes o notas de los primeros días | 4:3 |
-| `historia-primera-pepa` | Captura de la primera versión de la app | 4:3 |
-| `historia-desarrollo` | Un momento del desarrollo | 4:3 |
-| `historia-evolucion` | Cómo ha cambiado el diseño | 4:3 |
+| `historia-primera-pepa` | La primera PEPA (solo su cara). Se muestra en un marco redondo | 1:1 (cuadrada) |
+| `historia-desarrollo` | Un momento del desarrollo (junto a `historia-inicios`) | 4:3 |
+| `historia-evolucion` | PEPA de cuerpo entero: cómo evolucionó | 2:3 (vertical) |
 | `historia-paco` | Fotograma de los vídeos de Paco (solo se usa si no hay vídeos cargados en el panel) | 16:9 |
 
 Ejemplo: `src/assets/historia/historia-abuela-pepa.jpg`.

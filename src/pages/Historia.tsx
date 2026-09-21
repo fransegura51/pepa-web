@@ -176,7 +176,7 @@ export function Historia() {
           </div>
           <div className="hs-nace-photos hs-reveal">
             <HistoriaFoto slot="historia-inicios" />
-            <HistoriaFoto slot="historia-primera-pepa" />
+            <HistoriaFoto slot="historia-desarrollo" />
           </div>
         </div>
       </section>
@@ -282,9 +282,21 @@ export function Historia() {
             ))}
           </ul>
 
-          <div className="hs-usar-photos hs-reveal">
-            <HistoriaFoto slot="historia-desarrollo" />
-            <HistoriaFoto slot="historia-evolucion" />
+          <div className="hs-evo hs-reveal">
+            <p className="hs-grow-title">Y la propia PEPA también fue evolucionando:</p>
+            <div className="hs-evo-row">
+              <div className="hs-evo-item hs-evo-item--first">
+                <HistoriaFoto slot="historia-primera-pepa" />
+                <p className="hs-evo-cap">Primero fue solo una cara.</p>
+              </div>
+              <p className="hs-evo-arrow" aria-hidden="true">
+                →
+              </p>
+              <div className="hs-evo-item hs-evo-item--body">
+                <HistoriaFoto slot="historia-evolucion" />
+                <p className="hs-evo-cap">Después, PEPA de cuerpo entero.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
