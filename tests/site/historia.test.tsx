@@ -121,20 +121,22 @@ describe('línea temporal', () => {
 })
 
 describe('fotos reales: nada inventado', () => {
-  it('los 7 huecos existen y, sin imagen definitiva, salen como hueco reservado (no como imagen)', () => {
+  it('los 9 huecos existen y, sin imagen definitiva, salen como hueco reservado (no como imagen)', () => {
     expect(Object.keys(FOTOS).sort()).toEqual([
       'historia-abuela-pepa',
       'historia-desarrollo',
       'historia-evolucion',
       'historia-familia',
       'historia-inicios',
+      'historia-lista-antes',
+      'historia-lista-despues',
       'historia-paco',
       'historia-primera-pepa',
     ])
     for (const slot of Object.keys(FOTOS)) {
       expect(html, slot).toContain(`data-slot="${slot}"`)
     }
-    expect([...html.matchAll(/hs-photo--empty/g)].length).toBe(7 - REAL.length)
+    expect([...html.matchAll(/hs-photo--empty/g)].length).toBe(Object.keys(FOTOS).length - REAL.length)
   })
 
   it('el único personaje que aparece es la referencia oficial de PEPA, con alt y tamaño', () => {

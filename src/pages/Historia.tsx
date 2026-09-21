@@ -179,6 +179,23 @@ export function Historia() {
             <HistoriaFoto slot="historia-desarrollo" />
           </div>
         </div>
+
+        <div className="container hs-antes hs-reveal">
+          <p className="hs-grow-title">Así cambió la lista de la compra:</p>
+          <div className="hs-antes-row">
+            <div className="hs-antes-item">
+              <HistoriaFoto slot="historia-lista-antes" />
+              <p className="hs-evo-cap">Antes: la idea.</p>
+            </div>
+            <p className="hs-evo-arrow" aria-hidden="true">
+              →
+            </p>
+            <div className="hs-antes-item">
+              <HistoriaFoto slot="historia-lista-despues" />
+              <p className="hs-evo-cap">Después: la app de verdad.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* 5 · ¿QUIÉN ES PEPA REALMENTE? */}
@@ -391,6 +408,7 @@ export function Historia() {
       {/* 11 · LOS VÍDEOS DE PACO */}
       <section className="hs-paco" aria-labelledby="hs-paco">
         <div className="container">
+          <div className="hs-paco-top">
           <header className="hs-narrow">
             <p className="hs-eyebrow hs-eyebrow--light hs-reveal">Los vídeos de Paco</p>
             <h2 id="hs-paco" className="hs-h2 hs-h2--light hs-reveal">
@@ -413,16 +431,16 @@ export function Historia() {
               Los vídeos comenzaron como una forma divertida de dar a conocer PEPA, pero también se han convertido en una forma de contar el mundo real del que nació la aplicación.
             </p>
           </header>
+          <div className="hs-paco-figure hs-reveal">
+            <HistoriaFoto slot="historia-paco" />
+          </div>
+          </div>
 
-          {videos !== null && shownVideos.length > 0 ? (
+          {videos !== null && shownVideos.length > 0 && (
             <div className={`hm-videos hm-videos--${shownVideos.length} hs-videos hs-reveal`}>
               {shownVideos.map((v, i) => (
                 <VideoCard key={v.id} video={v} big={i === 0} />
               ))}
-            </div>
-          ) : (
-            <div className="hs-paco-photo hs-reveal">
-              <HistoriaFoto slot="historia-paco" />
             </div>
           )}
 

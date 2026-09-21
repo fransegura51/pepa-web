@@ -18,6 +18,8 @@ export type FotoSlot =
   | 'historia-primera-pepa'
   | 'historia-desarrollo'
   | 'historia-evolucion'
+  | 'historia-lista-antes'
+  | 'historia-lista-despues'
   | 'historia-paco'
 
 export interface FotoInfo {
@@ -73,10 +75,22 @@ export const FOTOS: Record<FotoSlot, FotoInfo> = {
     ratio: '2 / 3',
     icon: '🎨',
   },
+  'historia-lista-antes': {
+    placeholder: 'Aquí irá cómo era la lista de la compra al principio',
+    alt: 'La idea inicial de la lista de la compra de PEPA: una libreta con casillas vacías y PEPA apoyada en un carrito lleno',
+    ratio: '3 / 2',
+    icon: '📝',
+  },
+  'historia-lista-despues': {
+    placeholder: 'Aquí irá la lista de la compra de la app de verdad',
+    alt: 'La lista de la compra ya dentro de la app: la tarjeta «Compra pendiente» con los productos que faltan',
+    ratio: '678 / 487',
+    icon: '🛒',
+  },
   'historia-paco': {
-    placeholder: 'Aquí irá un fotograma de los vídeos de Paco',
-    alt: 'Un momento de los vídeos de Paco',
-    ratio: '16 / 9',
+    placeholder: 'Aquí irá Paco',
+    alt: 'Paco, el protagonista de los vídeos, en 3D y de cuerpo entero: camisa azul marino, pantalón beige y las manos en los bolsillos',
+    ratio: '2 / 3',
     icon: '🎬',
   },
 }
