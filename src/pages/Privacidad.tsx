@@ -12,7 +12,7 @@ export function Privacidad() {
     <div className="simple-page">
       <div className="container">
         <div className="dev-note">
-          Esta es la misma política de privacidad que usa la app. También puedes verla en{' '}
+          Esta es la política de privacidad de la app, con un apartado propio de esta web (lista de espera). La de la app también está en{' '}
           <a href="https://fransegura51.github.io/family-app/privacidad.html" target="_blank" rel="noreferrer">
             fransegura51.github.io/family-app/privacidad.html
           </a>
@@ -32,7 +32,8 @@ export function Privacidad() {
           <span style={{ background: '#fff3cd', padding: '0 4px' }}>[Nombre o razón social del responsable]</span>, con
           NIF <span style={{ background: '#fff3cd', padding: '0 4px' }}>[NIF/CIF]</span> y domicilio en{' '}
           <span style={{ background: '#fff3cd', padding: '0 4px' }}>[Dirección postal completa]</span>. Para cualquier
-          cuestión sobre tus datos, usa el formulario de{' '}
+          cuestión sobre tus datos, escribe a{' '}
+          <a href="mailto:info@pepafamilyapp.es">info@pepafamilyapp.es</a> o usa el formulario de{' '}
           <Link to="/contacto">contacto</Link>.
         </p>
 
@@ -173,7 +174,8 @@ export function Privacidad() {
         <h2>10. Tus derechos</h2>
         <p>
           Puedes acceder, rectificar, borrar, limitar u oponerte al tratamiento y pedir la portabilidad de tus datos
-          escribiéndonos por el formulario de <Link to="/contacto">contacto</Link>. Casi todo puedes hacerlo tú mismo/a
+          escribiéndonos a <a href="mailto:info@pepafamilyapp.es">info@pepafamilyapp.es</a> o por el formulario de{' '}
+          <Link to="/contacto">contacto</Link>. Casi todo puedes hacerlo tú mismo/a
           desde la app: cualquier miembro puede borrar sus propios datos, desenlazar una cuenta bancaria o un
           calendario externo, y desactivar el compartir ubicación en cualquier momento. Si crees que no te hemos
           atendido bien, puedes reclamar ante la Agencia Española de Protección de Datos (
@@ -181,6 +183,21 @@ export function Privacidad() {
             www.aepd.es
           </a>
           ).
+        </p>
+
+        <h2>12. Lista de espera y novedades (esta web)</h2>
+        <p>
+          Si te apuntas a la lista de espera en esta web, guardamos tu correo (y tu nombre o mensaje, si los escribes)
+          para gestionar la lista de espera, invitarte a usar PEPA cuando haya plaza y enviarte novedades de PEPA por
+          correo, aproximadamente una cada 30 días. La base legal es tu consentimiento (art. 6.1.a RGPD), que das al marcar
+          la casilla del formulario, sin marcar de antemano. Guardamos también de qué página o enlace vienes y la versión
+          del texto que aceptaste, para poder demostrar tu consentimiento.
+        </p>
+        <p>
+          Puedes retirar tu consentimiento y darte de baja en cualquier momento escribiendo a{' '}
+          <a href="mailto:info@pepafamilyapp.es">info@pepafamilyapp.es</a>: no volverás a recibir nuestros correos. Tus
+          datos de la lista de espera se guardan hasta que te des de baja, o hasta que dejemos de usar la lista, y no
+          se ceden a terceros.
         </p>
 
         <h2>11. Cambios</h2>

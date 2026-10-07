@@ -4,8 +4,11 @@ import { BrowserRouter } from 'react-router-dom'
 import { App } from '@/App'
 import { EditableTextsProvider } from '@/context/EditableTextsContext'
 import { ImagesProvider } from '@/context/ImagesContext'
+import { captureOrigin } from '@/lib/leads'
 import '@/styles/global.css'
 import '@/styles/admin.css'
+
+captureOrigin()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
