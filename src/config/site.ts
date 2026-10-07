@@ -24,6 +24,7 @@ export const SOCIAL_LINKS = [
   { label: 'Instagram', href: 'https://www.instagram.com/pepafamily8' },
   { label: 'YouTube', href: 'https://www.youtube.com/@Pepa-r8h' },
   { label: 'Telegram', href: 'https://t.me/pepafamilyapp' },
+  { label: 'WhatsApp', href: 'https://whatsapp.com/channel/0029VbDDHTeGU3BEzCJDPr0w' },
 ] as const
 
 // TODO: sin email de contacto público todavía — no publicamos un

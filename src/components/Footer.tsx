@@ -8,6 +8,7 @@ const SOCIAL_ICON: Record<string, string> = {
   Instagram: '📷',
   YouTube: '▶',
   Telegram: '✈',
+  WhatsApp: '💬',
 }
 
 export function Footer() {
