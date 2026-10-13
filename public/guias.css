@@ -312,3 +312,21 @@
   font-size: 0.95rem;
   margin: 0 0 12px;
 }
+
+.g-video {
+  margin: 20px 0 8px;
+  text-align: center;
+}
+.g-video video {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 14px;
+  background: #000;
+}
+.g-video figcaption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}

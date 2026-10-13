@@ -179,6 +179,7 @@ export function validateGuides(guides, today) {
     if (!INTENTS.includes(g.intencion)) at(`"intencion" debe ser una de: ${INTENTS.join(', ')}.`)
     if (!STATES.includes(g.estado)) at('"estado" debe ser "borrador" o "publicado".')
     if (!Object.hasOwn(DEMO_ZONES, g.demo)) at(`"demo" debe ser una zona de la demo: ${Object.keys(DEMO_ZONES).join(', ')}.`)
+    if (g.video && (typeof g.video !== 'string' || !/^[a-z0-9-]+$/.test(g.video))) at('"video" debe ser el nombre de un vídeo de public/ayuda sin extensión (p. ej. calendario).')
     if (g.imagen && (typeof g.imagen !== 'string' || !g.imagen.startsWith('/'))) at('"imagen" debe ser una ruta que empiece por "/" (p. ej. /og/mi-imagen.png).')
 
     const modulos = Array.isArray(g.modulos) ? g.modulos : []
@@ -414,6 +415,14 @@ export function renderGuidePage(g, all, ctx = {}, { includeDrafts = false } = {}
       }${g.revisado_por ? ` · Revisado por ${escapeHtml(g.revisado_por)}${g.revisado_fecha ? ` el ${formatDateEs(g.revisado_fecha)}` : ''}` : ''}</p>`
     : `<p class="g-meta">Por ${escapeHtml(g.autor)}</p>`
 
+  // Vídeo explicativo opcional (public/ayuda/<nombre>.mp4 + .jpg de portada). preload="none": no se descarga nada hasta que se pulsa play.
+  const videoFigure = g.video
+    ? `<figure class="g-video">
+          <video controls preload="none" playsinline poster="/ayuda/${escapeHtml(g.video)}.jpg" src="/ayuda/${escapeHtml(g.video)}.mp4">Tu navegador no puede reproducir este vídeo.</video>
+          <figcaption>Míralo en vídeo: Pepa te explica el ${escapeHtml(zoneName.toLowerCase())} paso a paso (1 min 27 s).</figcaption>
+        </figure>`
+    : ''
+
   const extra = [jsonLdScript(articleLd(g, image)), jsonLdScript(breadcrumbLd(crumbs))].map((s) => `    ${s}`).join('\n')
 
   return `${head({
@@ -436,6 +445,7 @@ export function renderGuidePage(g, all, ctx = {}, { includeDrafts = false } = {}
         ${dates}
         <p class="g-lead">${escapeHtml(g.resumen)}</p>
         ${devNote}
+        ${videoFigure}
         <div class="g-body">
 ${renderBody(g.body)}
         </div>

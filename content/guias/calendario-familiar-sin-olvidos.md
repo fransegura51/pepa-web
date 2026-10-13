@@ -18,6 +18,7 @@ relacionadas:
 modulos:
   - calendario
 demo: calendario
+video: calendario
 ---
 
 ## Por qué se olvidan las cosas
