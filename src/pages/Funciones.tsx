@@ -7,6 +7,7 @@ import { WaitlistForm } from '@/components/WaitlistForm'
 const MODULE_VIDEOS: Record<string, { name: string; dur: string }> = {
   calendario: { name: 'calendario', dur: '1 min 27 s' },
   compras: { name: 'compras', dur: '1 min 35 s' },
+  economia: { name: 'economia', dur: '1 min 55 s' },
 }
 
 function ModuleVideo({ name, dur }: { name: string; dur: string }) {

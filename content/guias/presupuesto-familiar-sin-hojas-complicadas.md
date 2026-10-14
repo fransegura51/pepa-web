@@ -17,6 +17,7 @@ relacionadas:
 modulos:
   - economia
 demo: economia
+video: economia
 ---
 
 ## El error de empezar por el detalle
