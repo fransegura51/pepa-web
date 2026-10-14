@@ -4,14 +4,17 @@ import { MODULES } from '@/config/content'
 import { WaitlistForm } from '@/components/WaitlistForm'
 
 // Vídeos explicativos (public/ayuda/<clave>.mp4 + .jpg). El <video> no se crea hasta que se pulsa «Ver vídeo»: no se descarga nada antes.
-const MODULE_VIDEOS: Record<string, string> = { calendario: 'calendario' }
+const MODULE_VIDEOS: Record<string, { name: string; dur: string }> = {
+  calendario: { name: 'calendario', dur: '1 min 27 s' },
+  compras: { name: 'compras', dur: '1 min 35 s' },
+}
 
-function ModuleVideo({ name }: { name: string }) {
+function ModuleVideo({ name, dur }: { name: string; dur: string }) {
   const [open, setOpen] = useState(false)
   if (!open) {
     return (
       <button type="button" className="btn btn-primary" style={{ marginTop: 12 }} onClick={() => setOpen(true)}>
-        ▶ Ver cómo funciona (vídeo, 1 min 27 s)
+        ▶ Ver cómo funciona (vídeo, {dur})
       </button>
     )
   }
@@ -51,7 +54,7 @@ export function Funciones() {
               <div>
                 <h3 style={{ marginBottom: 6 }}>{m.name}</h3>
                 <p style={{ margin: 0 }}>{m.tagline}</p>
-                {MODULE_VIDEOS[m.key] && <ModuleVideo name={MODULE_VIDEOS[m.key]} />}
+                {MODULE_VIDEOS[m.key] && <ModuleVideo name={MODULE_VIDEOS[m.key].name} dur={MODULE_VIDEOS[m.key].dur} />}
               </div>
             </div>
           ))}

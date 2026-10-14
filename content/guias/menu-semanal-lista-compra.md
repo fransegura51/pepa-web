@@ -18,6 +18,7 @@ modulos:
   - cocina
   - compras
 demo: cocina
+video: compras
 ---
 
 ## Por qué merece la pena planificar
