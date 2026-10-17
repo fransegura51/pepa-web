@@ -8,6 +8,10 @@ export const SITE_URL = 'https://pepafamilyapp.es'
 // Enable Banking...), así que es un paso aparte, no automático.
 export const APP_URL = 'https://fransegura51.github.io/family-app/'
 
+// Comunidad PEPA, dentro de la propia app web (no hace falta instalarla): se entra con la cuenta de PEPA (personas de 18 años o más). Cuando las páginas públicas de
+// lectura estén activas (Worker en /c), este enlace podrá apuntar allí; mientras tanto lleva a la app en el navegador.
+export const COMMUNITY_URL = `${APP_URL}comunidad`
+
 // Demo pública sin registro: página de entrada propia (demo/index.html),
 // por eso los botones son enlaces normales (carga completa), no <Link>.
 export const DEMO_URL = '/demo/'

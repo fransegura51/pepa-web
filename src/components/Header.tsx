@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { DEMO_URL, SHOW_GUIDES_LINK } from '@/config/site'
+import { COMMUNITY_URL, DEMO_URL, SHOW_GUIDES_LINK } from '@/config/site'
 import pepaLogoMaster from '@/assets/brand/pepa-family-app-logo-master.png'
 
 // Cada entrada lleva a una página que existe. "route" = pantalla de la web
@@ -8,6 +8,7 @@ import pepaLogoMaster from '@/assets/brand/pepa-family-app-logo-master.png'
 const NAV_LINKS: ({ kind: 'route'; to: string; label: string } | { kind: 'page'; href: string; label: string })[] = [
   { kind: 'route', to: '/funciones', label: 'Funciones' },
   { kind: 'page', href: DEMO_URL, label: 'Demo' },
+  { kind: 'page', href: COMMUNITY_URL, label: 'Comunidad' },
   { kind: 'route', to: '/paco', label: 'La vida con Paco' },
   { kind: 'route', to: '/historia', label: 'Historia' },
   ...(SHOW_GUIDES_LINK ? [{ kind: 'page' as const, href: '/guias/', label: 'Guías' }] : []),
