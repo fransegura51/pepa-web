@@ -66,6 +66,11 @@
       ;(function () {
         var t = '566e5c1b0fbe4b76af838ad8f1b6bf5e'
         if (t.indexOf('TOKEN_') === 0) return
+        // No contar las visitas del equipo: mismo aviso que usa el contador de /admin.
+        try {
+          if (localStorage.getItem('pepa_web_no_count') !== null) return
+        } catch (e) {}
+        if (location.pathname === '/admin' || location.pathname.indexOf('/admin/') === 0) return
         var s = document.createElement('script')
         s.defer = true
         s.src = 'https://static.cloudflareinsights.com/beacon.min.js'
