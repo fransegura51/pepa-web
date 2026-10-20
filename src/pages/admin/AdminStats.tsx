@@ -1,5 +1,6 @@
 import { VisitStatsPanel } from '@/components/admin/VisitStats'
 import { LeadStatsPanel } from '@/components/admin/LeadStats'
+import { CloudflareStatsPanel } from '@/components/admin/CloudflareStats'
 
 // Martes 15 de diciembre de 2026: apertura de la prueba (medianoche en Madrid, en UTC+1).
 const LAUNCH = new Date('2026-12-15T00:00:00+01:00')
@@ -18,6 +19,7 @@ export function AdminStats() {
       </p>
       <VisitStatsPanel />
       <LeadStatsPanel />
+      <CloudflareStatsPanel />
     </div>
   )
 }
