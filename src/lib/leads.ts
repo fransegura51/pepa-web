@@ -13,11 +13,11 @@ export function limpiarOrigen(valor: string | null | undefined): string | null {
   return v || null
 }
 
-/** Guarda el origen de la visita si el enlace trae ?utm=... o ?utm_source=... */
+/** Guarda el origen de la visita si el enlace trae ?origen=..., ?utm=... o ?utm_source=... */
 export function captureOrigin(): void {
   try {
     const p = new URLSearchParams(window.location.search)
-    const o = limpiarOrigen(p.get('utm') || p.get('utm_source'))
+    const o = limpiarOrigen(p.get('origen') || p.get('utm') || p.get('utm_source'))
     if (o) sessionStorage.setItem(ORIGEN_KEY, o)
   } catch {
     /* sin almacenamiento: no pasa nada */
