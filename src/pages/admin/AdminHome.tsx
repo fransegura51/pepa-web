@@ -22,6 +22,13 @@ export function AdminHome() {
         ))}
       </div>
       <VisitStatsPanel />
+      <p className="visit-note">
+        Estadísticas completas (países, dispositivos, de dónde llegan):{' '}
+        <a href="https://dash.cloudflare.com/?to=/:account/web-analytics" target="_blank" rel="noopener noreferrer">
+          abrir Cloudflare Web Analytics
+        </a>
+        .
+      </p>
       <LeadStatsPanel />
     </div>
   )
