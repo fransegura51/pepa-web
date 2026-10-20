@@ -9,8 +9,8 @@ const HERO_SUBTITLE_DEFAULT = EDITABLE_TEXTS.find((t) => t.key === 'hero_subtitl
 const HERO_CTA_DEFAULT = EDITABLE_TEXTS.find((t) => t.key === 'hero_cta')!.fallback
 
 // Hero: el mensaje manda, y el producto real (una captura de la app, grande)
-// lo acompaña. Solo dos acciones y con destinos distintos: probar (demo) y
-// bajar a ver la app por dentro. Las notas alrededor del móvil son
+// lo acompaña. Solo dos acciones y con destinos distintos: apuntarse a la lista
+// de espera (baja al formulario) y probar la demo. Las notas alrededor del móvil son
 // decoración (situaciones reales de PEPA): no son botones.
 export function Hero() {
   const title = useText('hero_title', HERO_TITLE_DEFAULT)
@@ -34,11 +34,11 @@ export function Hero() {
           </h1>
           <p className="hm-lead">{subtitle}</p>
           <div className="hm-cta-row">
-            <a href={DEMO_URL} className="btn btn-primary btn-lg">
-              {cta}
+            <a href="#acceso-anticipado" className="btn btn-primary btn-lg">
+              Apúntate: las 20 primeras familias, gratis
             </a>
-            <a href="#por-dentro" className="btn btn-ghost btn-lg">
-              Ver PEPA por dentro
+            <a href={DEMO_URL} className="btn btn-ghost btn-lg">
+              {cta}
             </a>
           </div>
         </div>

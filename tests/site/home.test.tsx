@@ -98,7 +98,7 @@ describe('una sola galería de capturas', () => {
 })
 
 describe('todo lo que parece clicable hace algo', () => {
-  const allowedInternal = new Set(['#por-dentro', '/demo/', '/guias/', '/funciones', '/paco', '/historia', '/preguntas', '/privacidad', '/condiciones', '/contacto', '/'])
+  const allowedInternal = new Set(['#por-dentro', '#acceso-anticipado', '/demo/', '/guias/', '/funciones', '/paco', '/historia', '/preguntas', '/privacidad', '/condiciones', '/contacto', '/'])
   const socialUrls = new Set(SOCIAL_LINKS.map((l) => l.href))
 
   it('cada enlace de la HOME, la cabecera y el pie tiene un destino que existe', () => {
@@ -145,8 +145,8 @@ describe('todo lo que parece clicable hace algo', () => {
     const hero = all(homeHtml, /<section class="hm-hero"[\s\S]*?<\/section>/g)[0]
     const ctas = all(hero, /<a [^>]*class="btn [^"]*"[^>]*>[\s\S]*?<\/a>/g)
     expect(ctas.map((c) => [textOf(c), c.match(/href="([^"]*)"/)?.[1]])).toEqual([
+      ['Apúntate: las 20 primeras familias, gratis', '#acceso-anticipado'],
       ['Probar PEPA gratis', '/demo/'],
-      ['Ver PEPA por dentro', '#por-dentro'],
     ])
   })
 
