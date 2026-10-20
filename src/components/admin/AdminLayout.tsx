@@ -7,6 +7,7 @@ import { excludeThisDeviceFromVisits } from '@/lib/visits'
 
 const SECTIONS = [
   { to: '/admin', label: 'Inicio', end: true },
+  { to: '/admin/estadisticas', label: 'Estadísticas' },
   { to: '/admin/videos', label: 'Vídeos de Paco' },
   { to: '/admin/promociones', label: 'Promociones' },
   { to: '/admin/novedades', label: 'Novedades' },

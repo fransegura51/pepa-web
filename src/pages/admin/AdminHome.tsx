@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom'
-import { VisitStatsPanel } from '@/components/admin/VisitStats'
-import { LeadStatsPanel } from '@/components/admin/LeadStats'
 
 const ACTIONS = [
   { to: '/admin/videos?nuevo=1', label: '+ Añadir vídeo' },
@@ -21,15 +19,9 @@ export function AdminHome() {
           </Link>
         ))}
       </div>
-      <VisitStatsPanel />
       <p className="visit-note">
-        Estadísticas completas (países, dispositivos, de dónde llegan):{' '}
-        <a href="https://dash.cloudflare.com/?to=/:account/web-analytics" target="_blank" rel="noopener noreferrer">
-          abrir Cloudflare Web Analytics
-        </a>
-        .
+        Visitas, altas en la lista de espera y canales: en <Link to="/admin/estadisticas">Estadísticas</Link>.
       </p>
-      <LeadStatsPanel />
     </div>
   )
 }

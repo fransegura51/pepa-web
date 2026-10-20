@@ -17,6 +17,7 @@ import { Contacto } from '@/pages/Contacto'
 import { NotFound } from '@/pages/NotFound'
 import { AdminLayout } from '@/components/admin/AdminLayout'
 import { AdminHome } from '@/pages/admin/AdminHome'
+import { AdminStats } from '@/pages/admin/AdminStats'
 import { AdminVideos } from '@/pages/admin/AdminVideos'
 import { AdminPromotions } from '@/pages/admin/AdminPromotions'
 import { AdminNews } from '@/pages/admin/AdminNews'
@@ -66,6 +67,7 @@ export function App() {
       <Routes>
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminHome />} />
+          <Route path="estadisticas" element={<AdminStats />} />
           <Route path="videos" element={<AdminVideos />} />
           <Route path="promociones" element={<AdminPromotions />} />
           <Route path="novedades" element={<AdminNews />} />
