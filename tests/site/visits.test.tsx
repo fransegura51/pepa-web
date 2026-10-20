@@ -104,9 +104,9 @@ describe('resumen para el panel', () => {
 })
 
 describe('integración', () => {
-  it('la web cuenta cada página y el panel de inicio enseña las visitas', () => {
+  it('la web cuenta cada página y la pestaña Estadísticas del panel enseña las visitas', () => {
     expect(read('src/App.tsx')).toContain('<PageViewTracker />')
-    expect(read('src/pages/admin/AdminHome.tsx')).toContain('<VisitStatsPanel />')
+    expect(read('src/pages/admin/AdminStats.tsx')).toContain('<VisitStatsPanel />')
   })
 
   it('la administradora se excluye a sí misma del contador', () => {
