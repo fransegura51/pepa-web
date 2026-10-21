@@ -225,7 +225,7 @@ export function EarlyAccess() {
               PEPA está en acceso anticipado
             </h2>
             <p>
-              Abrimos la prueba el martes 15 de diciembre y las 20 primeras familias entran gratis. Deja tu email y te avisamos en cuanto puedas entrar. Solo lo usamos para eso (
+              Abrimos la prueba en las próximas semanas y las 20 primeras familias entran gratis. Deja tu email y te avisamos en cuanto puedas entrar. Solo lo usamos para eso (
               <Link to="/privacidad" className="hm-textlink">
                 privacidad
               </Link>

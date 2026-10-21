@@ -7,7 +7,7 @@ export function Pricing() {
       <span className="pricing-badge">Próximamente</span>
       <h2>Aún estamos afinando el precio</h2>
       <p style={{ color: 'var(--texto-suave)' }}>
-        Abrimos la prueba el martes 15 de diciembre. Apúntate a la lista de espera y serás de las primeras familias en
+        Abrimos la prueba en las próximas semanas. Apúntate a la lista de espera y serás de las primeras familias en
         probarla y en saber cuánto costará.
       </p>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: 20 }}>
