@@ -35,7 +35,7 @@ export function Hero() {
           <p className="hm-lead">{subtitle}</p>
           <div className="hm-cta-row">
             <a href="#acceso-anticipado" className="btn btn-primary btn-lg">
-              Apúntate: las 20 primeras familias, gratis
+              Apúntate: las 50 primeras familias, gratis
             </a>
             <a href={DEMO_URL} className="btn btn-ghost btn-lg">
               {cta}

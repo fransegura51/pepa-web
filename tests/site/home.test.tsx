@@ -145,7 +145,7 @@ describe('todo lo que parece clicable hace algo', () => {
     const hero = all(homeHtml, /<section class="hm-hero"[\s\S]*?<\/section>/g)[0]
     const ctas = all(hero, /<a [^>]*class="btn [^"]*"[^>]*>[\s\S]*?<\/a>/g)
     expect(ctas.map((c) => [textOf(c), c.match(/href="([^"]*)"/)?.[1]])).toEqual([
-      ['Apúntate: las 20 primeras familias, gratis', '#acceso-anticipado'],
+      ['Apúntate: las 50 primeras familias, gratis', '#acceso-anticipado'],
       ['Probar PEPA gratis', '/demo/'],
     ])
   })
