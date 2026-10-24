@@ -17,7 +17,7 @@ export interface ModuleInfo {
 export const MODULES: ModuleInfo[] = [
   { key: 'calendario', icon: '📅', name: 'Calendario', tagline: 'Toda la familia en un mismo calendario.', color: '#DCEBFF' },
   { key: 'compras', icon: '🛒', name: 'Compras', tagline: 'Listas inteligentes y tickets por foto.', color: '#D8F5E8' },
-  { key: 'economia', icon: '€', name: 'Economía', tagline: 'Controla gastos sin complicaciones.', color: '#FFE8CC' },
+  { key: 'economia', icon: '€', name: 'Economía', tagline: 'Controla gastos sin complicaciones, también con tu banco.', color: '#FFE8CC' },
   { key: 'cocina', icon: '🍽️', name: 'Cocina', tagline: 'Recetas, menús y lista de la compra.', color: '#FFDCE0' },
   { key: 'eventos', icon: '🎉', name: 'Eventos', tagline: 'Cumpleaños, comuniones y mucho más.', color: '#EADCFF' },
   { key: 'documentos', icon: '📄', name: 'Documentos', tagline: 'Todo lo importante, siempre a mano.', color: '#DCF3FF' },

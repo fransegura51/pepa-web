@@ -38,7 +38,7 @@ export const SHOWCASE: ShowcaseModule[] = [
     name: 'Economía',
     icon: '💶',
     title: 'Ingresos, gastos y ahorro del mes',
-    text: 'Apuntas gastos o subes la foto del ticket y Pepa lee los productos. El resumen te cuenta cuánto ahorráis, con conclusiones de Pepa.',
+    text: 'Apuntas gastos, subes la foto del ticket o, con tu permiso y en solo lectura, conectas tu banco y los movimientos llegan solos. El resumen te cuenta cuánto ahorráis, con conclusiones de Pepa.',
     alt: 'Economía de PEPA: ingresos, gastos y ahorro del mes, con las conclusiones de Pepa',
   },
   {
